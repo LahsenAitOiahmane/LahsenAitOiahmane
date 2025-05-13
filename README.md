@@ -1,23 +1,49 @@
 # 👋 Salut, je suis Lahsen ! 🌐✨
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F700\&lines=Passionn%C3%A9+par+la+cybers%C3%A9curit%C3%A9+%26+les+t%C3%A9l%C3%A9communications+embarqu%C3%A9es+%F0%9F%94%92;Ing%C3%A9nieur+en+Cybers%C3%A9curit%C3%A9+%26+Syst%C3%A8mes+Embarqu%C3%A9s+%F0%9F%92%BB;Toujours+pr%C3%AAt+%C3%A0+relever+de+nouveaux+d%C3%A9fis+%E2%9A%A1%EF%B8%8F)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F700\&lines=Cyber-Security+%26+AI+Enthusiast;3rd-Year+Cybersecurity+Engineering+Student;Passionate+about+Vulnerability+Management+%26+Secure+Software+Development)
 
-## 🚀 Mes projets
+## 🚀 À propos de moi
 
-* 🌐 **Postflow** : Une plateforme marocaine pour aider les utilisateurs à définir des tendances, gérer leurs affaires ou améliorer leur profil.
-* 📊 **InvenTrack** : Un système de gestion des produits adapté aux entreprises, startups et marchés.
-* 🔎 **Scanner de Vulnérabilités Web** : Un outil client-serveur capable de détecter les vulnérabilités sur des sites web (XSS, SQLi, LFI, etc.).
-* 🗂️ **Outil de Gestion des Documents et Archivage** : Un système sécurisé de gestion de documents avec des fonctionnalités de classification automatique par IA.
+* 🎓 **Étudiant en ingénierie de cybersécurité** à l'ENSA Marrakech, Maroc.
+* 💡 Passionné par la cybersécurité, l'IA et les systèmes cryptographiques.
+* 🔍 Toujours en quête de défis pour améliorer mes compétences en développement sécurisé et en solutions pilotées par l'IA.
 
-## 💡 Compétences
+## 🌐 Compétences Techniques
 
-* 🚀 **Langages** : ![Python](https://img.shields.io/badge/Python-3776AB?style=flat\&logo=python\&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat\&logo=javascript\&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat\&logo=html5\&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat\&logo=css3\&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat\&logo=postgresql\&logoColor=white)
-* 💻 **Frameworks & Bibliothèques** : ![Flask](https://img.shields.io/badge/Flask-000000?style=flat\&logo=flask\&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat\&logo=fastapi\&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=flat\&logo=react\&logoColor=61DAFB) ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat\&logo=flutter\&logoColor=white)
-* 🔐 **Sécurité** : Cryptographie, Détection d'intrusion, Scanner de vulnérabilités
-* 🖥️ **Systèmes** : Windows, Linux
+* **Langages de programmation** : Python, C, JavaScript, SQL, R
+* **Langages de script** : Shell, PowerShell
+* **Développement Web** : HTML, CSS, React, FastAPI
+* **Outils de Cybersécurité** : Wireshark, Nmap, Metasploit, Burp Suite, OWASP ZAP, Aircrack-ng
+* **Analyse Forensique** : Autopsy, ELK Stack
+* **Cryptographie** : OpenSSL, Hashcat
+* **IA & ML** : Scikit-learn, PyTorch, Pandas, NumPy
+* **Systèmes d'exploitation** : Linux (Ubuntu, Kali), Windows
+* **Autres outils** : Git, Docker, MySQL, Apache
+
+## 🌱 Mes Projets
+
+* 📊 **InvenTrack** (Ongoing) : Système de gestion de marché intelligent avec prévision des prix, suivi des produits et analyse de comportement client.
+* 🔍 **Scanner de Vulnérabilités Web** : Un outil client-serveur détectant les failles de sécurité des applications web (SQLi, XSS, LFI).
+* 🔒 **Système de Gestion de Documents avec IA** : Plateforme sécurisée avec gestion de documents et classification automatique par IA.
+* 🔐 **Service de QR-Code Sécurisé & Cryptographie** : Génération de certificats, chiffrement de texte/média, vérification de hachage.
+* 🚨 **Système de Détection et Prévention d'Attaques** : Détection de scans de ports et blocage de connexions malveillantes.
+* ✍️ **Reconnaissance de Chiffres Manuscrits** : Projet IA pour la classification de chiffres manuscrits.
+
+## 💡 Centres d'intérêt
+
+* Sécurité informatique et tests d'intrusion
+* Développement de logiciels open-source
+* Innovations en cybersécurité
+* Intelligence Artificielle et Machine Learning
+
+## 🌐 Langues
+
+* 🇦🇪 Arabe : Langue maternelle
+* 🇬🇧 Anglais : Courant
+* 🇫🇷 Français : Intermédiaire supérieur
 
 ## 📫 Me contacter
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/LahsenAitOihmane) [![Email](https://img.shields.io/badge/Email-D14836?style=flat\&logo=gmail\&logoColor=white)](mailto:lahsenaitoihmane@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/tonprofil) [![Email](https://img.shields.io/badge/Email-D14836?style=flat\&logo=gmail\&logoColor=white)](mailto:lahsenaitoihmane@gmail.com)
 
 Merci de visiter mon profil GitHub ! 😄
