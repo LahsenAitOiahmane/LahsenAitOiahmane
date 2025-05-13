@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Lahsen! 🌐✨
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F700\&lines=Cyber-Security+%26+AI+Enthusiast;3rd-Year+Cybersecurity+Engineering+Student;Passionate+about+Vulnerability+Management+%26+Secure+Software+Development)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?color=6FFAEC\&lines=Cyber-Security+%26+AI+Enthusiast;3rd-Year+Cybersecurity+Engineering+Student;Passionate+about+Vulnerability+Management+%26+Secure+Software+Development)
 
 ## 🚀 About Me
 
