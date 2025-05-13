@@ -10,34 +10,14 @@
 
 ## 🌐 Technical Skills
 
-* **Programming Languages**: Python, C, JavaScript, SQL, R
-* **Scripting Languages**: Shell, PowerShell
-* **Web Development**: HTML, CSS, React, FastAPI
-* **Cybersecurity Tools**: Wireshark, Nmap, Metasploit, Burp Suite, OWASP ZAP, Aircrack-ng
-* **Forensic Analysis**: Autopsy, ELK Stack
-* **Cryptography**: OpenSSL, Hashcat
-* **AI & ML**: Scikit-learn, PyTorch, Pandas, NumPy
-* **Operating Systems**: Linux (Ubuntu, Kali), Windows
-* **Other Tools**: Git, Docker, MySQL, Apache
+* **Programming Languages**: ![Python](https://img.shields.io/badge/Python-3776AB?style=flat\&logo=python\&logoColor=white) ![C](https://img.shields.io/badge/C-A8B9CC?style=flat\&logo=c\&logoColor=black) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat\&logo=javascript\&logoColor=black) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat\&logo=postgresql\&logoColor=white) ![R](https://img.shields.io/badge/R-276DC3?style=flat\&logo=r\&logoColor=white)
+* **Scripting Languages**: ![Shell](https://img.shields.io/badge/Shell-B8B8B8?style=flat\&logo=gnu-bash\&logoColor=black) ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat\&logo=powershell\&logoColor=white)
+* **Web Development**: ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat\&logo=html5\&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat\&logo=css3\&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=flat\&logo=react\&logoColor=61DAFB) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat\&logo=fastapi\&logoColor=white)
+* **Cybersecurity Tools**: ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat\&logo=wireshark\&logoColor=white) ![Nmap](https://img.shields.io/badge/Nmap-4682B4?style=flat) ![Metasploit](https://img.shields.io/badge/Metasploit-002E63?style=flat\&logo=metasploit\&logoColor=white) ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FE7A16?style=flat\&logo=burp-suite\&logoColor=white)
+* **Forensic Analysis**: ![Autopsy](https://img.shields.io/badge/Autopsy-000000?style=flat\&logo=autoprefixer\&logoColor=white) ![ELK Stack](https://img.shields.io/badge/ELK_Stack-005571?style=flat\&logo=elastic\&logoColor=white)
+* **Cryptography**: ![OpenSSL](https://img.shields.io/badge/OpenSSL-721412?style=flat\&logo=openssl\&logoColor=white) ![Hashcat](https://img.shields.io/badge/Hashcat-800000?style=flat)
+* **AI & ML**: ![Scikit-learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=flat\&logo=scikit-learn\&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat\&logo=pytorch\&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat\&logo=pandas\&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat\&logo=numpy\&logoColor=white)
+* **Operating Systems**: ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat\&logo=linux\&logoColor=black) ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat\&logo=windows\&logoColor=white)
+* **Other Tools**: ![Git](https://img.shields.io/badge/Git-F05032?style=flat\&logo=git\&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat\&logo=docker\&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat\&logo=mysql\&logoColor=white) ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat\&logo=apache\&logoColor=white)
 
-## 🌱 My Projects
-
-* 📊 **InvenTrack** (Ongoing): Smart market management system with price prediction, product tracking, and customer behavior analysis.
-* 🔍 **Web Vulnerability Scanner**: A client-server tool detecting security flaws in web apps (SQLi, XSS, LFI).
-* 🔒 **Document Management System with AI**: Secure platform with document management and AI-based classification.
-* 🔐 **Secure QR-Code & Cryptography Service**: Certificate generation, text/media encryption, hash verification.
-* 🚨 **Attack Detection and Prevention System**: Detecting port scans and blocking malicious connections.
-* ✍️ **Handwritten Digit Recognition**: AI project for handwritten digit classification.
-
-## 💡 Interests
-
-* Cybersecurity and penetration testing
-* Open-source software development
-* Cybersecurity trends and innovations
-* Artificial Intelligence and Machine Learning
-
-## 📫 Contact Me
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/yourprofile) [![Email](https://img.shields.io/badge/Email-D14836?style=flat\&logo=gmail\&logoColor=white)](mailto:lahsenaitoihmane@gmail.com)
-
-Thanks for visiting my GitHub profile! 😄
+## 🌱 My Projects...
