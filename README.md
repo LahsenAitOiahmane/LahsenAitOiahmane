@@ -20,3 +20,7 @@
 * **AI & ML**: ![Scikit-learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=flat\&logo=scikit-learn\&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat\&logo=pytorch\&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat\&logo=pandas\&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat\&logo=numpy\&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white)  ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
 * **Operating Systems**: ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat\&logo=linux\&logoColor=black) ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat\&logo=windows\&logoColor=white)
 * **Other Tools**: ![Git](https://img.shields.io/badge/Git-F05032?style=flat\&logo=git\&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat\&logo=docker\&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat\&logo=mysql\&logoColor=white) ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat\&logo=apache\&logoColor=white)
+
+## 📊 Languages Used
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LahsenAitOihmane&layout=compact&theme=radical)
