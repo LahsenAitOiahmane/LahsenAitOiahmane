@@ -24,6 +24,6 @@
 ## 📊 Languages Used
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LahsenAitOiahmane&layout=compact&theme=radical)
-![Lahsen's GitHub Stats](https://github-readme-stats.vercel.app/api?username=LahsenAitOihmane&show_icons=true&theme=radical)
-![Lahsen's Streak](https://github-readme-streak-stats.herokuapp.com/?user=LahsenAitOihmane&theme=radical&hide_border=true)
+![Lahsen's GitHub Stats](https://github-readme-stats.vercel.app/api?username=LahsenAitOiahmane&show_icons=true&theme=radical)
+![Lahsen's Streak](https://github-readme-streak-stats.herokuapp.com/?user=LahsenAitOiahmane&theme=radical&hide_border=true)
 
