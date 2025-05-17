@@ -25,9 +25,3 @@
 
 ![My Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LahsenAitOiahmane&layout=compact&theme=radical)
 
-## 📈 GitHub Stats
-
-![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=LahsenAitOiahmane&show_icons=true&theme=radical)
-![My Streak](https://github-readme-streak-stats.herokuapp.com/?user=LahsenAitOiahmane&theme=radical&hide_border=true)
-
-
