@@ -1,8 +1,8 @@
 # Binary profile
 
-Edit `profile.json`, then run `python scripts/render_profile.py`. The renderer uses only the Python standard library. It produces light/dark desktop/mobile SVGs. Their CSS changes the bits in place and dissolves the face into a binary-built 27 every 12 seconds. Reduced-motion mode holds the face still. SVGs contain no scripts, embedded raster art, external fonts, or tracking services.
+Edit `profile.json`, then run `python scripts/render_profile.py`. The renderer uses only the Python standard library. It produces light/dark desktop/mobile SVGs. The same 2,028 binary particles travel along curved currents from a deliberately abstract portrait into a shaded 27, then return, in a 16-second loop. This is continuous SVG motion, not an opacity crossfade. The 27 has beveled highlights and a shallow side shadow to suggest depth in flat artwork. Reduced-motion mode shows a separate static abstract portrait. SVGs contain no scripts, embedded raster art, external fonts, or tracking services.
 
-The palette follows the user's NVIDIA-inspired direction: black, white, neutral grays, and NVIDIA Green `#76B900`, verified in [NVIDIA's published guidelines](https://www.nvidia.com/content/dam/en-zz/Solutions/about-us/documents/NVIDIA-Trademark-and-Logo-Usage-Guidelines.pdf). Light-theme text uses a darker green for contrast on white. No NVIDIA logo or affiliation is implied.
+The palette follows the user's NVIDIA-inspired direction, subsequently brightened at their request: black, white, neutral grays, and a lighter lime `#B4FF57`. Light-theme text uses `#548000` for contrast on white, with brighter lime on the relief. Facial contrast is tuned separately in each theme to keep the silhouette readable without restoring photographic detail.
 
 ## GitHub workflow
 
@@ -27,7 +27,7 @@ The terminal portrait plus aligned dot leaders take structural inspiration from 
 
 ## Source art and generation prompt
 
-The user supplied a portrait and explicitly requested a close-up of his face with glasses. The built-in image generation tool made an identity-preserving monochrome close-up. `assets/source/face-luminance.json` is its 64 by 80 luminance grid used by the renderer. Neither the original photograph nor the edited raster close-up is stored in this repository or embedded in the SVGs. The earlier fictional placeholder was removed.
+The user supplied a portrait and explicitly requested a close-up of his face with glasses, then asked for less recognizability at a medium level of detail. The built-in image generation tool made the initial monochrome close-up. `assets/source/face-luminance.json` now contains only a 36 by 46 coarsened, posterized grid; the earlier detailed grid was replaced. This preserves the general head-and-glasses silhouette without skin texture or detailed eyes. Neither the original photograph nor the edited raster close-up is stored in this repository or embedded in the SVGs. `number-relief.json` records a 2D typographic relief with front and side lighting; no 3D runtime is required.
 
 Exact prompt:
 
