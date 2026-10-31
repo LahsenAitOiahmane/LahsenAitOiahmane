@@ -1,0 +1,1346 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1225" viewBox="0 0 480 1225" role="img" aria-labelledby="title desc">
+<title id="title">l27sen / binary alter ego</title>
+<desc id="desc">Lahsen wearing glasses, rendered entirely in animated zeros and ones that dissolve into 27. Cybersecurity engineering student focused on reverse engineering and binary analysis. Hobbies include XOR and PRNG checks, heap use-after-free and GOT overwrites, JWT algorithm confusion, and local LLMs. Advanced CTF practice on Hack The Box and Root-Me.</desc>
+<style>
+text {font-family:Consolas,'Liberation Mono','Courier New',monospace;white-space:pre}
+.face-mask{animation:face-cycle 12s linear infinite}
+.number-mask{opacity:0;animation:number-cycle 12s linear infinite}
+.bits-a{animation:bits-a 1.6s steps(1,end) infinite}
+.bits-b{opacity:0;animation:bits-b 1.6s steps(1,end) infinite}
+.scan{animation:scan 6s linear infinite}
+.rain{animation:rain 4s linear infinite;opacity:.45}
+.cursor{animation:blink 1.4s steps(1,end) infinite}
+@keyframes face-cycle{0%,60%{opacity:1}66%,88%{opacity:0}96%,100%{opacity:1}}
+@keyframes number-cycle{0%,64%{opacity:0}70%,84%{opacity:1}94%,100%{opacity:0}}
+@keyframes bits-a{0%,49%{opacity:1}50%,99%{opacity:0}100%{opacity:1}}
+@keyframes bits-b{0%,49%{opacity:0}50%,99%{opacity:1}100%{opacity:0}}
+@keyframes scan{0%{transform:translateY(-50px)}100%{transform:translateY(570px)}}
+@keyframes rain{0%{transform:translateY(-200px)}100%{transform:translateY(560px)}}
+@keyframes blink{0%,68%{opacity:1}69%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){
+ .face-mask,.bits-a{animation:none;opacity:1}
+ .number-mask,.bits-b,.scan,.rain{animation:none;display:none}
+ .cursor{animation:none;opacity:1}
+}
+</style>
+<rect x=".5" y=".5" width="479" height="1224" rx="12" fill="#ffffff" stroke="#cddbb7"/>
+<text x="24" y="28" fill="#426800" font-size="15" font-weight="700" class="" >l27sen@localhost:~$</text>
+<g transform="translate(110 46) scale(.76)">
+<g id="binary-portrait" aria-hidden="true">
+<g class="face-mask">
+<g class="bits-a">
+<g fill="#dfdfdf" font-size="9.20">
+<text x="0" y="28.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             01                                 </text>
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  101                           </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             11         0                       </text>
+<text x="0" y="54.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               100  0  1  1 110   11   00                       </text>
+<text x="0" y="61.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0                  0   0                          </text>
+<text x="0" y="67.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0   0      11 00   1001  0     10  0               </text>
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           11    10  001 1  00010010   1 10                     </text>
+<text x="0" y="80.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         00       11010010   01  11011    00      0             </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        10      1110100100       11011 01    011                </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0  0111  01       00   0000         1           </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0     0011  01010  1     1 00    100       1  1          </text>
+<text x="0" y="106.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            10000   10110 111  00011     11        0  1         </text>
+<text x="0" y="112.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1     1        00 01  01001  100   01 0    10              </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0     0     101           00   0  10110 1 1           </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        11         0                  00010  1010010    0       </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0  0        0                     0110    111011 1         </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1   10      1                        11         0111 1      </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       01     1                 1         001      0110  1      </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0110  0                  0          1001   0001   0      </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     11110   1                  0           0010  0110          </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  0  1000   0                                 001 110  1 0      </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      01   1                                   1 111     0      </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   0  10  1                                     0  1  0  1      </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1  1   1                                      1001111 0      </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1  0101                                         101          </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1 1011                                                      </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 000                         1010                 0       </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1 010                       1                      1       </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1110      01   110                                1       </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0 1     1  10110                                          </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0     11       1   111                 0                 </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0    0          0  0           11     11        0        </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        000       010   10     1                       1        </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   11                                           </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0                                                       </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0              1                                      </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0                 1                                      </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       0                                        </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                         1      </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0                                                        </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1                                                       </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          01  1 0                               </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1                                     </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       01                          0            </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      01                           0            </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1       0                            0             </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                  0             </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0                                  1              </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                1                                0              </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1                                              </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0                                1             </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0                                              </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0                                             </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                1               </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                               1                </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     0                                          </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       0                    1                   </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         0                1                     </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            1          0                        </text>
+</g>
+<g fill="#bfbfbf" font-size="9.20">
+<text x="0" y="35.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           10   1                               </text>
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     0       001 1                              </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   1 1     00  011   0                          </text>
+<text x="0" y="54.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     11 10 0   111  0    0                      </text>
+<text x="0" y="61.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                00 10 10000101011     1   1                     </text>
+<text x="0" y="67.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0 010111  1  011       1 000  10                </text>
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0 00  10                   1                       </text>
+<text x="0" y="80.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           110  01                      01  100                 </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0    0                         11 0   1 0             </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0      1       00                  010110100            </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           01           11                 01  011 11           </text>
+<text x="0" y="106.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0   10             0                 10   001 01          </text>
+<text x="0" y="112.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        011              10     00        0 1010  11101         </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 110               01       00      11       0 0 0        </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 1            0001             0              1111        </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      11          0              0         1  1      1 11       </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 1                        00     01  101100101    0       </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1                 0       1   100001    01       </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1  0       1                           0    010    111       </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1                            0    01    1100      </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    0        0                   0          11   0   01 0       </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1 0                           0            1     00101       </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1     0                      0            1    11 11       </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    11                                          1       0       </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    10    1                                      10   110       </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0    0                                       1101101       </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1   0                       0    1010        11010        </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0                           00                 111        </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               0                                      00        </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1 1            110         0        11         00        </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        00     11    0 111   1  1    10     1         10        </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        11 0 1             0  0      0                1         </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0     1              1      10     0 0         </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        00 0    0      10     01                        1       </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0 0          01       0                                </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1                     0                         1      </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                         1      </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0                1       0                               </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1               10                                       </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0              1                                  0      </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0             10                                         </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1                                      </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0                                             0       </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10              01                                    </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1     0 0                              </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1              1           1                1          </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      1  1                        0             </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     1                            0             </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      0 11                                      </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     1  1                                       </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 0              </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1                                0             </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0                                1             </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0                                            </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    0                                           </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                         0                      </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             0        1                         </text>
+</g>
+<g fill="#9f9f9f" font-size="9.20">
+<text x="0" y="35.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             110                                </text>
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      0100  0   0                               </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    0 001 1       111                           </text>
+<text x="0" y="54.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  01                 10                         </text>
+<text x="0" y="61.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               0  1  0                 011                      </text>
+<text x="0" y="67.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              10                        1                       </text>
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1                            0001 1               </text>
+<text x="0" y="80.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              10                               001              </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1                               0                    </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         11   1                                                 </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0 0                                  00                 </text>
+<text x="0" y="106.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       001                                   011                </text>
+<text x="0" y="112.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      01                                                        </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1                    00100 1                    1         </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0                 01       100       11                   </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                0     1     11                  </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0          0                                              </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    0 1         0                       1                       </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0         1                 0       0                      </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   11          1                 0        0                     </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   0          1                 1          0                    </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1       01                    1          0                  </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    0       1                      0                            </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0                                                    </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0                                                    </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0                                                    </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 1         0      0             </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0       100          10   0      10      11           </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0         0          0110111           0          </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1           0       0 0      0  1       1          </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            1    1111         01 1 00  0        0               </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1   01101   0     01     0    10     0                </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            1 100    00   1   1      0 1 1         0 0          </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             101 10  00   0                   1                 </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              10111011  1 0                                     </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1  10110 01000 1                  0         1        </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10         00 0      11            1                  </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0 0          00 0                  0            1      </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        11                       1         1             1      </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        00   1          0                                       </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1     00    0  1       1                                </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1 11    100011110 1                                     </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1  1          010111                                    </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       000    001                      1        </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1            1         0                   1         </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       1   0       0 0                          </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1               1         010                         </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0            0110101      110                        </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       1  11                                    </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    0  0 10                                     </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0           0110                   0              </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              1                                 </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               0                                                </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 0              </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          010                                   </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       01011000010001                           </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        1101111111                              </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         0100111                                </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          111                                   </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          01                                    </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  1       11                                    </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          01                                    </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           01                                   </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     1      10                                  </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      1                      1                  </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        1                  0                    </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          00                                    </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              00    01                          </text>
+</g>
+<g fill="#7e7e7e" font-size="9.20">
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          11                                    </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1                                      </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            110                                  0              </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           000                                                  </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0                                                      </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                1                               </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          11 1110   0                           </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   011101     10  0  0                          </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0          110  0   0                         </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1           0           011       1                        </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    0           11           1          1                       </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                10           1           0                      </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               100            0           1                     </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              10110           0             0                   </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             101110            010  0         0                 </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            111011                             0                </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            000011                              0               </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            10010                     1011       0              </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           00111                1                               </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0000001   111      0      0101 0       1             </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 00           1     1  1       0  1     00           </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 1             00        10   1    00                </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  0     1            0          </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   100          1 1 1     1     1110 1          </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1                     01   1 0     001             </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            1                       000111   0      11          </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            00                0              01                 </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            01     1                                            </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        01   10011100  0  0                                     </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1 0   110 0101                                          </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 1 10   0010                             1           </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 0 1     11            000   111                     </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         10  1  0000    00    1 1    101                        </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1    00           0                            1       </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0    01010001      0                                   </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0  1 111111100     11                                  </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         11 0 0011111101    10     1                            </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 1  00111110        1100   0           0 1           </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            1  1011001     101         0                        </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            10 100011          011111                           </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               111011         1       0          1              </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0 0111  0    0                     0              </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0010011011    011                               </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1 0010110010011 0                                </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0111000101                                     </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0 100101001                                     </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 00100101010                                    </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  00110111111                                   </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  00010010111                                   </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0111111110001          1                      </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  00110000   100011  1010        0              </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  01010              11                         </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  010110          01                            </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   111100       10                              </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  11000010   011                                </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  11011011  000                  1              </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   1011110  11                                  </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   1110011  10                  0               </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    0100110  11                                 </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      111110  11              1                 </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       110111000                                </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         0001010                                </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            110         1                       </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                1011                            </text>
+</g>
+<g fill="#5e5e5e" font-size="9.20">
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                               0                </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            1                                   </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         00000     00                           </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0000101001        0                          </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0100110  00     1   1                         </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  001111   01 10       0                        </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  100001   10 11        0                       </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  001011    10 1  1      0                      </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   10011    00 01  0       0                    </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   00110     01      0       0                  </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  1111            100         0                 </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  111                          0                </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0001               00    0                     </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                10110         00            0                   </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        011  0           1   0                  </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0              10  1 00         10 1   0             </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0                1   1     101       0  01           </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00                             1       0101           </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                            1       1           </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1      0        10  0                </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1      10      00    1  0  01        </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1       110  1001      01  100       </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1    0             1   10    1       </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            0                               0     10   10       </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            00   0        0      1                010  01       </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0 1  010      10     0 0       0 0     01 0  0       </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1   00100     10          110         10 110         </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           01             01     1010   0        00   1         </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            00              011000               1   01         </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            11               1 01                 0             </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0                   0                              </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0                      0                           </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1 01             011                    1            </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1 10               100011             0              </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1                                  0              </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1             10 11 0101 0                        </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1            011110                              </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1                 1                              </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0               11                              </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0          01010               0                </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0         11000              0                 </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            011             011                 </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             111           000                  </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             0100        110                    </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               0010    10 1                     </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   11    1                      </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                       10        0              </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    1110         1              </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0               11             1              </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                000              0              </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               0001                             </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              100011            0               </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              011000                            </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               11101           0                </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                111                             </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                101                             </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                01        1                     </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               1101    1                        </text>
+</g>
+<g fill="#3e3e3e" font-size="9.20">
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   10                           </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         11        000                          </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        110       01111                         </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        011       010000                        </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        1000       011000                       </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        0111        1000011                     </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        00101         1010011                   </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      110011111000   111010101                  </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     0000011110000    110101111                 </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     010010000101011       101001               </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     111000100               01110              </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           11                 0110              </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            01                 101              </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             101                 11             </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                          10                    </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 0         0                    </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            01  01                              </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            01  11          0  0 00             </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            11  000   10    0  000  10          </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            001  101000110111  000  001         </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           0110  1010110110   1111  01          </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           10101   0111111 1 01110   00         </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           11110   0101111   10101    10        </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1001100         110001  1   01       </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            00           0 000111  000 00       </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  001000110011101 101  0        </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              0  11011111000100001 00010        </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  101000111100011101100         </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                     11001101101001000          </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                       11001010011              </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                        101110111               </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                        010110010               </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 0      111100011               </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  001001011100101               </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  011110001011000               </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  001011011000011               </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                011011110001001 1               </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                01001101100001 11               </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               1111001000010   11               </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                01011101001   111               </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 11100111   01000               </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   1000    100000               </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                          0001101               </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                         10011101               </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                        000011001               </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    0101100100011               </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   01001111010110               </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   10110010001100               </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    101111011000                </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    111100101010                </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    00000001001                 </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   00000001100                  </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   1010011111                   </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  00001011                      </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   0010                         </text>
+</g>
+<g fill="#1e1e1e" font-size="9.20">
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  0011                          </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                           1          1         </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  1       1                     </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                          1                     </text>
+</g>
+</g>
+<g class="bits-b">
+<g fill="#dfdfdf" font-size="9.20">
+<text x="0" y="28.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             01                                 </text>
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  101                           </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             10         1                       </text>
+<text x="0" y="54.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               101  0  0  0 110   10   10                       </text>
+<text x="0" y="61.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0                  1   1                          </text>
+<text x="0" y="67.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0   0      00 00   0000  0     11  1               </text>
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           11    10  011 0  11001110   0 11                     </text>
+<text x="0" y="80.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         10       00010101   11  11011    11      1             </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        10      0110111000       10000 00    010                </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                1  0110  00       11   0110         0           </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1     0111  01100  0     1 00    101       1  1          </text>
+<text x="0" y="106.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            11000   10010 111  10000     10        0  0         </text>
+<text x="0" y="112.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0     1        10 01  01111  110   11 0    00              </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1     1     011           00   1  11101 0 1           </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        10         1                  10101  0110011    1       </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1  1        1                     1110    111001 0         </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1   01      0                        11         1011 1      </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       10     1                 1         000      1101  0      </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1110  1                  0          1101   1111   0      </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     10001   1                  1           1111  0101          </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  0  0111   0                                 010 001  0 0      </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      01   0                                   1 010     0      </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   0  01  0                                     1  1  1  0      </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1  1   0                                      0111000 0      </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1  0101                                         010          </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1 1001                                                      </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 001                         0100                 1       </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1 101                       1                      0       </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1100      10   011                                1       </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1 1     1  00100                                          </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1     00       0   010                 0                 </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1    1          0  0           11     10        1        </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        100       010   11     0                       1        </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   10                                           </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1                                                       </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0              0                                      </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0                 0                                      </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       0                                        </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                         1      </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1                                                        </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0                                                       </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          00  0 1                               </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0                                     </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       01                          1            </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      00                           0            </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1       0                            0             </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                  1             </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1                                  1              </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0                                0              </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1                                              </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1                                1             </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1                                              </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  1                                             </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                0               </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                               0                </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     0                                          </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       0                    1                   </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1                1                     </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            1          1                        </text>
+</g>
+<g fill="#bfbfbf" font-size="9.20">
+<text x="0" y="35.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           10   0                               </text>
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     1       001 1                              </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0 0     01  111   0                          </text>
+<text x="0" y="54.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     11 00 1   000  0    0                      </text>
+<text x="0" y="61.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                00 11 01000010101     0   1                     </text>
+<text x="0" y="67.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0 011110  0  100       1 001  01                </text>
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1 00  10                   0                       </text>
+<text x="0" y="80.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           010  10                      10  011                 </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1    1                         01 0   0 1             </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0      1       00                  000101101            </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           10           01                 10  000 01           </text>
+<text x="0" y="106.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0   11             1                 00   011 10          </text>
+<text x="0" y="112.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        100              00     11        1 0101  11110         </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 110               00       11      00       0 0 1        </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1 1            0011             0              1111        </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      00          1              1         0  0      0 00       </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0 1                        10     01  010110111    0       </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1                 0       0   100010    00       </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   0  1       0                           0    011    101       </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0                            0    01    0110      </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1        1                   1          11   1   10 1       </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   0 1                           0            0     00101       </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0     1                      1            0    10 01       </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    00                                          1       1       </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    01    0                                      11   111       </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0    0                                       0011011       </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1   1                       1    1110        00100        </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0                           10                 010        </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               0                                      00        </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0 0            010         1        10         10        </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        10     10    0 100   1  0    00     1         10        </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        11 0 1             0  0      0                0         </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0     1              0      10     1 0         </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        11 1    1      10     01                        1       </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1 0          00       0                                </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0                     1                         0      </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                         0      </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1                1       1                               </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       0               01                                       </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1              1                                  1      </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       1             11                                         </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1                                      </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0                                             0       </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01              11                                    </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         0     0 1                              </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1              0           0                1          </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      1  1                        1             </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     1                            1             </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      1 01                                      </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     1  0                                       </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 0              </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0                                0             </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1                                0             </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 0              </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0                                            </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    1                                           </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                         0                      </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             1        1                         </text>
+</g>
+<g fill="#9f9f9f" font-size="9.20">
+<text x="0" y="35.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             010                                </text>
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      1011  0   1                               </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    0 101 1       101                           </text>
+<text x="0" y="54.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  00                 00                         </text>
+<text x="0" y="61.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1  0  1                 111                      </text>
+<text x="0" y="67.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              10                        0                       </text>
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1                            0111 0               </text>
+<text x="0" y="80.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              11                               111              </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1                               1                    </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         11   0                                                 </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0 0                                  01                 </text>
+<text x="0" y="106.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       011                                   000                </text>
+<text x="0" y="112.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      01                                                        </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1                    10111 0                    0         </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      1                 00       111       11                   </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                0     0     00                  </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      0          1                                              </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1 1         1                       1                       </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     1         1                 0       1                      </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   00          1                 0        0                     </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   0          1                 0          0                    </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1       11                    0          1                  </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1       0                      0                            </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1                                                    </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1                                                    </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0                                                    </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 0         0      1             </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1       011          01   0      11      11           </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1         0          0011110           1          </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1           1       1 0      1  0       0          </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            0    1100         00 1 11  0        1               </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1   11100   1     00     1    11     1                </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            0 001    01   0   0      1 1 0         0 1          </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             100 10  00   1                   0                 </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              00000101  0 1                                     </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0  00110 00111 1                  1         0        </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11         11 0      00            1                  </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1 0          01 1                  0            0      </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        10                       1         0             0      </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        01   0          0                                       </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1     00    0  0       0                                </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        0 01    011000110 1                                     </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1  1          000000                                    </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       110    110                      0        </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0            1         1                   0         </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       0   1       1 0                          </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1               1         100                         </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0            0000111      111                        </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       0  10                                    </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    1  0 01                                     </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0           0100                   1              </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              0                                 </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1                                                </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                                 1              </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          101                                   </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       11010011010011                           </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        0010111011                              </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1111100                                </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          001                                   </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          10                                    </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0       00                                    </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          11                                    </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           00                                   </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     0      01                                  </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      1                      1                  </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        0                  0                    </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          00                                    </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              00    00                          </text>
+</g>
+<g fill="#7e7e7e" font-size="9.20">
+<text x="0" y="41.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          11                                    </text>
+<text x="0" y="48.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         1                                      </text>
+<text x="0" y="87.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            101                                  0              </text>
+<text x="0" y="93.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           001                                                  </text>
+<text x="0" y="99.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1                                                      </text>
+<text x="0" y="119.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                1                               </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          11 1000   1                           </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   010011     01  1  0                          </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0          100  1   1                         </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     0           1           100       1                        </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    1           11           1          0                       </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                11           0           0                      </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               111            1           1                     </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              11000           1             1                   </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             001101            010  1         0                 </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            100000                             1                </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            101111                              0               </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            11101                     1110       1              </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           11001                1                               </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1001011   011      0      0001 0       1             </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 00           0     1  0       1  1     10           </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 0             10        11   1    01                </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  1     0            1          </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   101          0 1 0     0     1101 0          </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             1                     11   1 0     011             </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            0                       001111   1      01          </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            01                0              00                 </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            01     1                                            </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        11   10111000  0  0                                     </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">        1 1   000 0101                                          </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 1 01   0111                             0           </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 0 0     11            010   010                     </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         00  1  1000    01    0 0    010                        </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         1    00           1                            0       </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0    01010101      1                                   </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         0  1 010000111     11                                  </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         11 0 0001111100    11     0                            </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0 0  10000101        0110   1           1 0           </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            0  1000001     110         1                        </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            11 101000          101001                           </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               111111         0       0          1              </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0 0101  1    1                     1              </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                1101001000    010                               </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1 1111000001011 1                                </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 1010011001                                     </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                1 100000100                                     </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 00111010011                                    </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  10100011110                                   </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  11001110001                                   </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0001001111001          1                      </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  11111011   111110  0101        1              </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  01000              11                         </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  001001          01                            </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   001110       01                              </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  01011010   110                                </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  10000010  111                  1              </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0101001  10                                  </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0101100  01                  1               </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                    0010110  10                                 </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      101010  01              1                 </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                       100000001                                </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         0010000                                </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            101         1                       </text>
+<text x="0" y="495.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                1111                            </text>
+</g>
+<g fill="#5e5e5e" font-size="9.20">
+<text x="0" y="74.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                               1                </text>
+<text x="0" y="125.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            0                                   </text>
+<text x="0" y="132.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         10101     10                           </text>
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   0101100101        1                          </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0100100  11     1   1                         </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  001010   01 10       0                        </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  001010   11 10        0                       </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  110101    11 1  1      1                      </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   01101    11 11  1       0                    </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                   01000     00      1       1                  </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  0110            010         0                 </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  110                          1                </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0101               11    1                     </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                00110         01            1                   </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        011  1           1   0                  </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1              10  0 11         00 0   1             </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1                0   0     100       1  10           </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00                             0       0011           </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                            0       0           </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           0      1        00  0                </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1      01      11    0  1  00        </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           0       000  1111      00  111       </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           0    1             1   10    0       </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            0                               1     00   10       </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            11   0        1      0                100  10       </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1 0  101      00     1 0       1 1     11 1  0       </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1   10110     00          100         10 011         </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           01             10     1100   0        11   1         </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            00              100010               0   00         </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">            10               1 00                 1             </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0                   0                              </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">             0                      0                           </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           1 00             100                    0            </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">           0 00               111000             1              </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              0                                  1              </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">              1             10 11 0111 0                        </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               1            111001                              </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">               0                 0                              </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0               00                              </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                0          10010               0                </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                 0         00010              0                 </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            010             010                 </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             010           111                  </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             1010        101                    </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               1110    11 0                     </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   10    1                      </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                       00        0              </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    1010         1              </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                  1               10             0              </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                011              0              </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               0101                             </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              000100            0               </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              001001                            </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               00000           0                </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                110                             </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                000                             </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                01        1                     </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               0111    0                        </text>
+</g>
+<g fill="#3e3e3e" font-size="9.20">
+<text x="0" y="138.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   11                           </text>
+<text x="0" y="145.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                         00        101                          </text>
+<text x="0" y="151.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        111       11111                         </text>
+<text x="0" y="158.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        000       110001                        </text>
+<text x="0" y="164.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        1100       111111                       </text>
+<text x="0" y="171.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        0011        0100110                     </text>
+<text x="0" y="177.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                        00111         0001010                   </text>
+<text x="0" y="184.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                      101101111101   001001101                  </text>
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     0010000100101    010001100                 </text>
+<text x="0" y="197.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     101100111110110       111100               </text>
+<text x="0" y="203.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                     111010011               00101              </text>
+<text x="0" y="210.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           11                 1010              </text>
+<text x="0" y="216.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            00                 101              </text>
+<text x="0" y="223.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                             101                 00             </text>
+<text x="0" y="229.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                          10                    </text>
+<text x="0" y="236.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 1         1                    </text>
+<text x="0" y="242.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            11  00                              </text>
+<text x="0" y="249.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            01  00          0  0 11             </text>
+<text x="0" y="255.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            01  010   00    0  010  01          </text>
+<text x="0" y="261.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            011  010001100101  111  111         </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1100  0100110011   0100  00          </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           01111   1110000 1 11100   11         </text>
+<text x="0" y="281.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           01001   1111011   10100    11        </text>
+<text x="0" y="287.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                           1111100         111011  0   01       </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                            00           1 101101  000 00       </text>
+<text x="0" y="300.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  001111010110011 110  1        </text>
+<text x="0" y="307.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                              1  00100110111110001 11100        </text>
+<text x="0" y="313.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  000111010011110101011         </text>
+<text x="0" y="320.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                     11001111011110100          </text>
+<text x="0" y="326.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                       00101010110              </text>
+<text x="0" y="333.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                        001111111               </text>
+<text x="0" y="339.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                        010011110               </text>
+<text x="0" y="346.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 1      111110010               </text>
+<text x="0" y="352.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  111101101000010               </text>
+<text x="0" y="359.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  110101000010000               </text>
+<text x="0" y="365.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  111111110011010               </text>
+<text x="0" y="372.1" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                100111000110010 1               </text>
+<text x="0" y="378.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                10001000001010 11               </text>
+<text x="0" y="385.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                               1110000010010   01               </text>
+<text x="0" y="391.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                11111010110   111               </text>
+<text x="0" y="398.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                 01001000   01001               </text>
+<text x="0" y="404.5" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   1000    000000               </text>
+<text x="0" y="411.0" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                          0101100               </text>
+<text x="0" y="417.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                         10000101               </text>
+<text x="0" y="423.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                        100110111               </text>
+<text x="0" y="430.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    1011111100000               </text>
+<text x="0" y="436.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   01110101101011               </text>
+<text x="0" y="443.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   11110101110011               </text>
+<text x="0" y="449.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    011101110000                </text>
+<text x="0" y="456.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    001101111111                </text>
+<text x="0" y="462.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                    00010110001                 </text>
+<text x="0" y="469.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   01110000110                  </text>
+<text x="0" y="475.8" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   0001001000                   </text>
+<text x="0" y="482.2" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  01101101                      </text>
+<text x="0" y="488.7" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                   1010                         </text>
+</g>
+<g fill="#1e1e1e" font-size="9.20">
+<text x="0" y="190.6" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  1101                          </text>
+<text x="0" y="268.4" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                           0          1         </text>
+<text x="0" y="274.9" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                  1       1                     </text>
+<text x="0" y="294.3" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                                          0                     </text>
+</g>
+</g>
+<clipPath id="face-shape">
+<rect x="144.1" y="27.9" width="32.0" height="6.48"/>
+<rect x="112.1" y="34.4" width="69.4" height="6.48"/>
+<rect x="101.4" y="40.9" width="53.4" height="6.48"/>
+<rect x="170.8" y="40.9" width="32.0" height="6.48"/>
+<rect x="96.1" y="47.4" width="10.7" height="6.48"/>
+<rect x="112.1" y="47.4" width="10.7" height="6.48"/>
+<rect x="128.1" y="47.4" width="10.7" height="6.48"/>
+<rect x="144.1" y="47.4" width="5.3" height="6.48"/>
+<rect x="165.5" y="47.4" width="16.0" height="6.48"/>
+<rect x="192.2" y="47.4" width="16.0" height="6.48"/>
+<rect x="218.8" y="47.4" width="5.3" height="6.48"/>
+<rect x="80.1" y="53.8" width="96.1" height="6.48"/>
+<rect x="202.8" y="53.8" width="26.7" height="6.48"/>
+<rect x="74.7" y="60.3" width="16.0" height="6.48"/>
+<rect x="96.1" y="60.3" width="32.0" height="6.48"/>
+<rect x="138.8" y="60.3" width="5.3" height="6.48"/>
+<rect x="154.8" y="60.3" width="16.0" height="6.48"/>
+<rect x="208.2" y="60.3" width="26.7" height="6.48"/>
+<rect x="245.5" y="60.3" width="10.7" height="6.48"/>
+<rect x="69.4" y="66.8" width="21.4" height="6.48"/>
+<rect x="101.4" y="66.8" width="10.7" height="6.48"/>
+<rect x="213.5" y="66.8" width="5.3" height="6.48"/>
+<rect x="229.5" y="66.8" width="32.0" height="6.48"/>
+<rect x="58.7" y="73.3" width="37.4" height="6.48"/>
+<rect x="213.5" y="73.3" width="10.7" height="6.48"/>
+<rect x="234.9" y="73.3" width="32.0" height="6.48"/>
+<rect x="58.7" y="79.8" width="26.7" height="6.48"/>
+<rect x="218.8" y="79.8" width="21.4" height="6.48"/>
+<rect x="256.2" y="79.8" width="16.0" height="6.48"/>
+<rect x="42.7" y="86.2" width="37.4" height="6.48"/>
+<rect x="122.8" y="86.2" width="10.7" height="6.48"/>
+<rect x="229.5" y="86.2" width="48.0" height="6.48"/>
+<rect x="42.7" y="92.7" width="26.7" height="6.48"/>
+<rect x="128.1" y="92.7" width="10.7" height="6.48"/>
+<rect x="229.5" y="92.7" width="37.4" height="6.48"/>
+<rect x="277.6" y="92.7" width="5.3" height="6.48"/>
+<rect x="32.0" y="99.2" width="32.0" height="6.48"/>
+<rect x="133.4" y="99.2" width="5.3" height="6.48"/>
+<rect x="229.5" y="99.2" width="42.7" height="6.48"/>
+<rect x="277.6" y="99.2" width="10.7" height="6.48"/>
+<rect x="32.0" y="105.7" width="26.7" height="6.48"/>
+<rect x="138.8" y="105.7" width="5.3" height="6.48"/>
+<rect x="170.8" y="105.7" width="10.7" height="6.48"/>
+<rect x="224.2" y="105.7" width="5.3" height="6.48"/>
+<rect x="234.9" y="105.7" width="21.4" height="6.48"/>
+<rect x="272.2" y="105.7" width="5.3" height="6.48"/>
+<rect x="282.9" y="105.7" width="10.7" height="6.48"/>
+<rect x="26.7" y="112.2" width="26.7" height="6.48"/>
+<rect x="133.4" y="112.2" width="58.7" height="6.48"/>
+<rect x="224.2" y="112.2" width="10.7" height="6.48"/>
+<rect x="272.2" y="112.2" width="5.3" height="6.48"/>
+<rect x="282.9" y="112.2" width="16.0" height="6.48"/>
+<rect x="26.7" y="118.6" width="16.0" height="6.48"/>
+<rect x="106.8" y="118.6" width="96.1" height="6.48"/>
+<rect x="229.5" y="118.6" width="10.7" height="6.48"/>
+<rect x="277.6" y="118.6" width="21.4" height="6.48"/>
+<rect x="32.0" y="125.1" width="10.7" height="6.48"/>
+<rect x="96.1" y="125.1" width="112.1" height="6.48"/>
+<rect x="229.5" y="125.1" width="21.4" height="6.48"/>
+<rect x="282.9" y="125.1" width="5.3" height="6.48"/>
+<rect x="293.6" y="125.1" width="10.7" height="6.48"/>
+<rect x="26.7" y="131.6" width="16.0" height="6.48"/>
+<rect x="90.7" y="131.6" width="128.1" height="6.48"/>
+<rect x="229.5" y="131.6" width="48.0" height="6.48"/>
+<rect x="298.9" y="131.6" width="5.3" height="6.48"/>
+<rect x="21.4" y="138.1" width="16.0" height="6.48"/>
+<rect x="80.1" y="138.1" width="90.7" height="6.48"/>
+<rect x="176.1" y="138.1" width="48.0" height="6.48"/>
+<rect x="240.2" y="138.1" width="32.0" height="6.48"/>
+<rect x="293.6" y="138.1" width="10.7" height="6.48"/>
+<rect x="16.0" y="144.6" width="21.4" height="6.48"/>
+<rect x="80.1" y="144.6" width="90.7" height="6.48"/>
+<rect x="176.1" y="144.6" width="53.4" height="6.48"/>
+<rect x="250.9" y="144.6" width="16.0" height="6.48"/>
+<rect x="288.2" y="144.6" width="16.0" height="6.48"/>
+<rect x="16.0" y="151.0" width="10.7" height="6.48"/>
+<rect x="74.7" y="151.0" width="96.1" height="6.48"/>
+<rect x="176.1" y="151.0" width="58.7" height="6.48"/>
+<rect x="256.2" y="151.0" width="10.7" height="6.48"/>
+<rect x="288.2" y="151.0" width="21.4" height="6.48"/>
+<rect x="16.0" y="157.5" width="10.7" height="6.48"/>
+<rect x="69.4" y="157.5" width="176.1" height="6.48"/>
+<rect x="261.5" y="157.5" width="5.3" height="6.48"/>
+<rect x="282.9" y="157.5" width="10.7" height="6.48"/>
+<rect x="298.9" y="157.5" width="5.3" height="6.48"/>
+<rect x="16.0" y="164.0" width="16.0" height="6.48"/>
+<rect x="64.1" y="164.0" width="186.8" height="6.48"/>
+<rect x="282.9" y="164.0" width="21.4" height="6.48"/>
+<rect x="21.4" y="170.5" width="10.7" height="6.48"/>
+<rect x="58.7" y="170.5" width="197.5" height="6.48"/>
+<rect x="277.6" y="170.5" width="10.7" height="6.48"/>
+<rect x="298.9" y="170.5" width="5.3" height="6.48"/>
+<rect x="21.4" y="177.0" width="10.7" height="6.48"/>
+<rect x="58.7" y="177.0" width="202.8" height="6.48"/>
+<rect x="298.9" y="177.0" width="5.3" height="6.48"/>
+<rect x="21.4" y="183.4" width="10.7" height="6.48"/>
+<rect x="58.7" y="183.4" width="213.5" height="6.48"/>
+<rect x="288.2" y="183.4" width="16.0" height="6.48"/>
+<rect x="26.7" y="189.9" width="5.3" height="6.48"/>
+<rect x="53.4" y="189.9" width="218.8" height="6.48"/>
+<rect x="282.9" y="189.9" width="21.4" height="6.48"/>
+<rect x="32.0" y="196.4" width="5.3" height="6.48"/>
+<rect x="53.4" y="196.4" width="133.4" height="6.48"/>
+<rect x="208.2" y="196.4" width="90.7" height="6.48"/>
+<rect x="32.0" y="202.9" width="5.3" height="6.48"/>
+<rect x="53.4" y="202.9" width="122.8" height="6.48"/>
+<rect x="181.5" y="202.9" width="117.4" height="6.48"/>
+<rect x="53.4" y="209.4" width="32.0" height="6.48"/>
+<rect x="128.1" y="209.4" width="170.8" height="6.48"/>
+<rect x="37.4" y="215.8" width="5.3" height="6.48"/>
+<rect x="48.0" y="215.8" width="26.7" height="6.48"/>
+<rect x="117.4" y="215.8" width="181.5" height="6.48"/>
+<rect x="42.7" y="222.3" width="26.7" height="6.48"/>
+<rect x="80.1" y="222.3" width="37.4" height="6.48"/>
+<rect x="122.8" y="222.3" width="16.0" height="6.48"/>
+<rect x="154.8" y="222.3" width="85.4" height="6.48"/>
+<rect x="256.2" y="222.3" width="42.7" height="6.48"/>
+<rect x="42.7" y="228.8" width="21.4" height="6.48"/>
+<rect x="69.4" y="228.8" width="53.4" height="6.48"/>
+<rect x="144.1" y="228.8" width="21.4" height="6.48"/>
+<rect x="170.8" y="228.8" width="32.0" height="6.48"/>
+<rect x="213.5" y="228.8" width="26.7" height="6.48"/>
+<rect x="250.9" y="228.8" width="42.7" height="6.48"/>
+<rect x="64.1" y="235.3" width="32.0" height="6.48"/>
+<rect x="112.1" y="235.3" width="16.0" height="6.48"/>
+<rect x="138.8" y="235.3" width="26.7" height="6.48"/>
+<rect x="170.8" y="235.3" width="122.8" height="6.48"/>
+<rect x="48.0" y="241.8" width="5.3" height="6.48"/>
+<rect x="58.7" y="241.8" width="42.7" height="6.48"/>
+<rect x="112.1" y="241.8" width="21.4" height="6.48"/>
+<rect x="138.8" y="241.8" width="165.5" height="6.48"/>
+<rect x="48.0" y="248.2" width="5.3" height="6.48"/>
+<rect x="58.7" y="248.2" width="74.7" height="6.48"/>
+<rect x="138.8" y="248.2" width="165.5" height="6.48"/>
+<rect x="58.7" y="254.7" width="74.7" height="6.48"/>
+<rect x="138.8" y="254.7" width="170.8" height="6.48"/>
+<rect x="42.7" y="261.2" width="90.7" height="6.48"/>
+<rect x="138.8" y="261.2" width="170.8" height="6.48"/>
+<rect x="37.4" y="267.7" width="272.2" height="6.48"/>
+<rect x="37.4" y="274.2" width="272.2" height="6.48"/>
+<rect x="37.4" y="280.6" width="85.4" height="6.48"/>
+<rect x="128.1" y="280.6" width="181.5" height="6.48"/>
+<rect x="42.7" y="287.1" width="261.5" height="6.48"/>
+<rect x="42.7" y="293.6" width="261.5" height="6.48"/>
+<rect x="42.7" y="300.1" width="261.5" height="6.48"/>
+<rect x="48.0" y="306.6" width="250.9" height="6.48"/>
+<rect x="48.0" y="313.0" width="90.7" height="6.48"/>
+<rect x="149.5" y="313.0" width="10.7" height="6.48"/>
+<rect x="165.5" y="313.0" width="5.3" height="6.48"/>
+<rect x="176.1" y="313.0" width="117.4" height="6.48"/>
+<rect x="48.0" y="319.5" width="85.4" height="6.48"/>
+<rect x="144.1" y="319.5" width="144.1" height="6.48"/>
+<rect x="53.4" y="326.0" width="69.4" height="6.48"/>
+<rect x="133.4" y="326.0" width="138.8" height="6.48"/>
+<rect x="58.7" y="332.5" width="58.7" height="6.48"/>
+<rect x="128.1" y="332.5" width="144.1" height="6.48"/>
+<rect x="74.7" y="339.0" width="37.4" height="6.48"/>
+<rect x="117.4" y="339.0" width="149.5" height="6.48"/>
+<rect x="74.7" y="345.4" width="192.2" height="6.48"/>
+<rect x="74.7" y="351.9" width="192.2" height="6.48"/>
+<rect x="80.1" y="358.4" width="181.5" height="6.48"/>
+<rect x="80.1" y="364.9" width="181.5" height="6.48"/>
+<rect x="85.4" y="371.4" width="176.1" height="6.48"/>
+<rect x="90.7" y="377.8" width="170.8" height="6.48"/>
+<rect x="96.1" y="384.3" width="170.8" height="6.48"/>
+<rect x="96.1" y="390.8" width="170.8" height="6.48"/>
+<rect x="96.1" y="397.3" width="170.8" height="6.48"/>
+<rect x="96.1" y="403.8" width="170.8" height="6.48"/>
+<rect x="96.1" y="410.2" width="170.8" height="6.48"/>
+<rect x="96.1" y="416.7" width="170.8" height="6.48"/>
+<rect x="90.7" y="423.2" width="181.5" height="6.48"/>
+<rect x="90.7" y="429.7" width="176.1" height="6.48"/>
+<rect x="96.1" y="436.2" width="170.8" height="6.48"/>
+<rect x="96.1" y="442.6" width="170.8" height="6.48"/>
+<rect x="101.4" y="449.1" width="160.1" height="6.48"/>
+<rect x="101.4" y="455.6" width="154.8" height="6.48"/>
+<rect x="112.1" y="462.1" width="138.8" height="6.48"/>
+<rect x="117.4" y="468.6" width="128.1" height="6.48"/>
+<rect x="128.1" y="475.0" width="106.8" height="6.48"/>
+<rect x="138.8" y="481.5" width="85.4" height="6.48"/>
+<rect x="154.8" y="488.0" width="53.4" height="6.48"/>
+</clipPath><g clip-path="url(#face-shape)">
+<g class="rain" style="animation-duration:4.16s;animation-delay:-1.48s" fill="#426800" font-size="9.20">
+<text x="21.4" y="0.0">0</text>
+<text x="21.4" y="6.5">1</text>
+<text x="21.4" y="13.0">1</text>
+<text x="21.4" y="19.4">0</text>
+<text x="21.4" y="25.9">0</text>
+<text x="21.4" y="32.4">1</text>
+<text x="21.4" y="38.9">0</text>
+<text x="21.4" y="45.4">1</text>
+<text x="21.4" y="51.8">0</text>
+<text x="21.4" y="58.3">1</text>
+<text x="21.4" y="64.8">1</text>
+<text x="21.4" y="71.3">0</text>
+<text x="21.4" y="77.8">1</text>
+<text x="21.4" y="84.2">1</text>
+<text x="21.4" y="90.7">0</text>
+<text x="21.4" y="97.2">1</text>
+<text x="21.4" y="103.7">0</text>
+<text x="21.4" y="110.2">1</text>
+</g>
+<g class="rain" style="animation-duration:3.71s;animation-delay:-0.16s" fill="#426800" font-size="9.20">
+<text x="48.0" y="0.0">0</text>
+<text x="48.0" y="6.5">1</text>
+<text x="48.0" y="13.0">0</text>
+<text x="48.0" y="19.4">0</text>
+<text x="48.0" y="25.9">0</text>
+<text x="48.0" y="32.4">0</text>
+<text x="48.0" y="38.9">1</text>
+<text x="48.0" y="45.4">0</text>
+<text x="48.0" y="51.8">0</text>
+<text x="48.0" y="58.3">1</text>
+<text x="48.0" y="64.8">1</text>
+<text x="48.0" y="71.3">0</text>
+<text x="48.0" y="77.8">0</text>
+<text x="48.0" y="84.2">0</text>
+<text x="48.0" y="90.7">1</text>
+<text x="48.0" y="97.2">0</text>
+<text x="48.0" y="103.7">1</text>
+<text x="48.0" y="110.2">1</text>
+</g>
+<g class="rain" style="animation-duration:4.43s;animation-delay:-2.92s" fill="#426800" font-size="9.20">
+<text x="74.7" y="0.0">0</text>
+<text x="74.7" y="6.5">0</text>
+<text x="74.7" y="13.0">0</text>
+<text x="74.7" y="19.4">1</text>
+<text x="74.7" y="25.9">1</text>
+<text x="74.7" y="32.4">0</text>
+<text x="74.7" y="38.9">1</text>
+<text x="74.7" y="45.4">1</text>
+<text x="74.7" y="51.8">1</text>
+<text x="74.7" y="58.3">0</text>
+<text x="74.7" y="64.8">0</text>
+<text x="74.7" y="71.3">1</text>
+<text x="74.7" y="77.8">0</text>
+<text x="74.7" y="84.2">0</text>
+<text x="74.7" y="90.7">1</text>
+<text x="74.7" y="97.2">1</text>
+<text x="74.7" y="103.7">1</text>
+<text x="74.7" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:3.90s;animation-delay:-3.53s" fill="#426800" font-size="9.20">
+<text x="101.4" y="0.0">1</text>
+<text x="101.4" y="6.5">1</text>
+<text x="101.4" y="13.0">1</text>
+<text x="101.4" y="19.4">0</text>
+<text x="101.4" y="25.9">1</text>
+<text x="101.4" y="32.4">0</text>
+<text x="101.4" y="38.9">1</text>
+<text x="101.4" y="45.4">0</text>
+<text x="101.4" y="51.8">0</text>
+<text x="101.4" y="58.3">0</text>
+<text x="101.4" y="64.8">0</text>
+<text x="101.4" y="71.3">0</text>
+<text x="101.4" y="77.8">0</text>
+<text x="101.4" y="84.2">1</text>
+<text x="101.4" y="90.7">1</text>
+<text x="101.4" y="97.2">1</text>
+<text x="101.4" y="103.7">0</text>
+<text x="101.4" y="110.2">1</text>
+</g>
+<g class="rain" style="animation-duration:4.99s;animation-delay:-2.38s" fill="#426800" font-size="9.20">
+<text x="128.1" y="0.0">1</text>
+<text x="128.1" y="6.5">0</text>
+<text x="128.1" y="13.0">0</text>
+<text x="128.1" y="19.4">1</text>
+<text x="128.1" y="25.9">1</text>
+<text x="128.1" y="32.4">1</text>
+<text x="128.1" y="38.9">1</text>
+<text x="128.1" y="45.4">1</text>
+<text x="128.1" y="51.8">0</text>
+<text x="128.1" y="58.3">1</text>
+<text x="128.1" y="64.8">1</text>
+<text x="128.1" y="71.3">0</text>
+<text x="128.1" y="77.8">0</text>
+<text x="128.1" y="84.2">1</text>
+<text x="128.1" y="90.7">0</text>
+<text x="128.1" y="97.2">0</text>
+<text x="128.1" y="103.7">0</text>
+<text x="128.1" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:4.35s;animation-delay:-0.87s" fill="#426800" font-size="9.20">
+<text x="154.8" y="0.0">1</text>
+<text x="154.8" y="6.5">0</text>
+<text x="154.8" y="13.0">0</text>
+<text x="154.8" y="19.4">0</text>
+<text x="154.8" y="25.9">0</text>
+<text x="154.8" y="32.4">0</text>
+<text x="154.8" y="38.9">0</text>
+<text x="154.8" y="45.4">1</text>
+<text x="154.8" y="51.8">1</text>
+<text x="154.8" y="58.3">1</text>
+<text x="154.8" y="64.8">0</text>
+<text x="154.8" y="71.3">1</text>
+<text x="154.8" y="77.8">1</text>
+<text x="154.8" y="84.2">0</text>
+<text x="154.8" y="90.7">0</text>
+<text x="154.8" y="97.2">1</text>
+<text x="154.8" y="103.7">0</text>
+<text x="154.8" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:3.43s;animation-delay:-1.47s" fill="#426800" font-size="9.20">
+<text x="181.5" y="0.0">1</text>
+<text x="181.5" y="6.5">0</text>
+<text x="181.5" y="13.0">0</text>
+<text x="181.5" y="19.4">0</text>
+<text x="181.5" y="25.9">0</text>
+<text x="181.5" y="32.4">1</text>
+<text x="181.5" y="38.9">0</text>
+<text x="181.5" y="45.4">0</text>
+<text x="181.5" y="51.8">0</text>
+<text x="181.5" y="58.3">1</text>
+<text x="181.5" y="64.8">1</text>
+<text x="181.5" y="71.3">0</text>
+<text x="181.5" y="77.8">1</text>
+<text x="181.5" y="84.2">1</text>
+<text x="181.5" y="90.7">1</text>
+<text x="181.5" y="97.2">0</text>
+<text x="181.5" y="103.7">1</text>
+<text x="181.5" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:5.19s;animation-delay:-2.15s" fill="#426800" font-size="9.20">
+<text x="208.2" y="0.0">0</text>
+<text x="208.2" y="6.5">0</text>
+<text x="208.2" y="13.0">1</text>
+<text x="208.2" y="19.4">0</text>
+<text x="208.2" y="25.9">0</text>
+<text x="208.2" y="32.4">1</text>
+<text x="208.2" y="38.9">1</text>
+<text x="208.2" y="45.4">1</text>
+<text x="208.2" y="51.8">1</text>
+<text x="208.2" y="58.3">0</text>
+<text x="208.2" y="64.8">0</text>
+<text x="208.2" y="71.3">0</text>
+<text x="208.2" y="77.8">0</text>
+<text x="208.2" y="84.2">0</text>
+<text x="208.2" y="90.7">1</text>
+<text x="208.2" y="97.2">1</text>
+<text x="208.2" y="103.7">0</text>
+<text x="208.2" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:3.58s;animation-delay:-1.77s" fill="#426800" font-size="9.20">
+<text x="234.9" y="0.0">1</text>
+<text x="234.9" y="6.5">1</text>
+<text x="234.9" y="13.0">1</text>
+<text x="234.9" y="19.4">0</text>
+<text x="234.9" y="25.9">1</text>
+<text x="234.9" y="32.4">1</text>
+<text x="234.9" y="38.9">1</text>
+<text x="234.9" y="45.4">1</text>
+<text x="234.9" y="51.8">1</text>
+<text x="234.9" y="58.3">0</text>
+<text x="234.9" y="64.8">0</text>
+<text x="234.9" y="71.3">0</text>
+<text x="234.9" y="77.8">0</text>
+<text x="234.9" y="84.2">0</text>
+<text x="234.9" y="90.7">1</text>
+<text x="234.9" y="97.2">1</text>
+<text x="234.9" y="103.7">0</text>
+<text x="234.9" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:3.51s;animation-delay:-0.69s" fill="#426800" font-size="9.20">
+<text x="261.5" y="0.0">1</text>
+<text x="261.5" y="6.5">0</text>
+<text x="261.5" y="13.0">1</text>
+<text x="261.5" y="19.4">0</text>
+<text x="261.5" y="25.9">0</text>
+<text x="261.5" y="32.4">0</text>
+<text x="261.5" y="38.9">0</text>
+<text x="261.5" y="45.4">1</text>
+<text x="261.5" y="51.8">0</text>
+<text x="261.5" y="58.3">0</text>
+<text x="261.5" y="64.8">1</text>
+<text x="261.5" y="71.3">0</text>
+<text x="261.5" y="77.8">1</text>
+<text x="261.5" y="84.2">0</text>
+<text x="261.5" y="90.7">1</text>
+<text x="261.5" y="97.2">1</text>
+<text x="261.5" y="103.7">0</text>
+<text x="261.5" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:4.31s;animation-delay:-2.80s" fill="#426800" font-size="9.20">
+<text x="288.2" y="0.0">1</text>
+<text x="288.2" y="6.5">0</text>
+<text x="288.2" y="13.0">1</text>
+<text x="288.2" y="19.4">1</text>
+<text x="288.2" y="25.9">1</text>
+<text x="288.2" y="32.4">1</text>
+<text x="288.2" y="38.9">1</text>
+<text x="288.2" y="45.4">1</text>
+<text x="288.2" y="51.8">0</text>
+<text x="288.2" y="58.3">0</text>
+<text x="288.2" y="64.8">0</text>
+<text x="288.2" y="71.3">1</text>
+<text x="288.2" y="77.8">1</text>
+<text x="288.2" y="84.2">1</text>
+<text x="288.2" y="90.7">1</text>
+<text x="288.2" y="97.2">0</text>
+<text x="288.2" y="103.7">0</text>
+<text x="288.2" y="110.2">0</text>
+</g>
+<g class="rain" style="animation-duration:5.02s;animation-delay:-0.59s" fill="#426800" font-size="9.20">
+<text x="314.9" y="0.0">1</text>
+<text x="314.9" y="6.5">1</text>
+<text x="314.9" y="13.0">1</text>
+<text x="314.9" y="19.4">0</text>
+<text x="314.9" y="25.9">0</text>
+<text x="314.9" y="32.4">0</text>
+<text x="314.9" y="38.9">1</text>
+<text x="314.9" y="45.4">0</text>
+<text x="314.9" y="51.8">0</text>
+<text x="314.9" y="58.3">0</text>
+<text x="314.9" y="64.8">1</text>
+<text x="314.9" y="71.3">1</text>
+<text x="314.9" y="77.8">0</text>
+<text x="314.9" y="84.2">0</text>
+<text x="314.9" y="90.7">1</text>
+<text x="314.9" y="97.2">1</text>
+<text x="314.9" y="103.7">0</text>
+<text x="314.9" y="110.2">1</text>
+</g>
+</g></g><g class="number-mask">
+<g class="bits-a">
+<text x="0" y="132.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11100011111000100110    11011010001100010100          </text>
+<text x="0" y="138.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01011011110101011000    01011011011011110010          </text>
+<text x="0" y="145.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10001010011100100010    11010000100110011010          </text>
+<text x="0" y="151.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11011001000100111000    10100001010010011101          </text>
+<text x="0" y="158.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00010011110000001010    01111101111110000101          </text>
+<text x="0" y="164.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10111110001001010000    11110001000100000111          </text>
+<text x="0" y="171.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0100                    1100          </text>
+<text x="0" y="177.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0000                    1101          </text>
+<text x="0" y="184.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0101                    1110          </text>
+<text x="0" y="190.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1101                    1001          </text>
+<text x="0" y="197.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1111                    1100          </text>
+<text x="0" y="203.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0010                    0111          </text>
+<text x="0" y="210.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1011                0001              </text>
+<text x="0" y="216.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0100                0011              </text>
+<text x="0" y="223.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0110                1111              </text>
+<text x="0" y="229.5" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1100                1010              </text>
+<text x="0" y="236.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1010                0101              </text>
+<text x="0" y="242.5" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0001                0011              </text>
+<text x="0" y="249.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10010011011101110011            0000                  </text>
+<text x="0" y="255.4" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11111010101111001010            1001                  </text>
+<text x="0" y="261.9" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11111010101001101111            0101                  </text>
+<text x="0" y="268.4" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00100100011001001100            0111                  </text>
+<text x="0" y="274.9" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11010110110010101001            1100                  </text>
+<text x="0" y="281.4" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00000010010001000000            1010                  </text>
+<text x="0" y="287.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0000                        0010                      </text>
+<text x="0" y="294.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0011                        1101                      </text>
+<text x="0" y="300.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1111                        1101                      </text>
+<text x="0" y="307.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0011                        0000                      </text>
+<text x="0" y="313.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1001                        1011                      </text>
+<text x="0" y="320.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0101                        0101                      </text>
+<text x="0" y="326.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0000                        1000                      </text>
+<text x="0" y="333.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1010                        1100                      </text>
+<text x="0" y="339.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0010                        0110                      </text>
+<text x="0" y="346.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1011                        1011                      </text>
+<text x="0" y="352.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0110                        0101                      </text>
+<text x="0" y="359.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0001                        1100                      </text>
+<text x="0" y="365.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00101000000000110111        0000                      </text>
+<text x="0" y="372.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11100001001011001011        1011                      </text>
+<text x="0" y="378.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01000110110010110100        1111                      </text>
+<text x="0" y="385.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10011000101011100010        1000                      </text>
+<text x="0" y="391.5" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00001010001001011010        0010                      </text>
+<text x="0" y="398.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11010010110010010000        0001                      </text>
+</g>
+<g class="bits-b">
+<text x="0" y="132.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00000110001000001000    11001010001101010010          </text>
+<text x="0" y="138.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01110111000101000011    10101011010111000011          </text>
+<text x="0" y="145.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11001110010000110000    01111110101101011110          </text>
+<text x="0" y="151.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01000110001010000100    11111100100100100001          </text>
+<text x="0" y="158.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11100111010110111110    11010110101101001011          </text>
+<text x="0" y="164.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11110101001110101110    11110001100011000100          </text>
+<text x="0" y="171.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0111                    1001          </text>
+<text x="0" y="177.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1101                    1011          </text>
+<text x="0" y="184.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0001                    1000          </text>
+<text x="0" y="190.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0000                    1110          </text>
+<text x="0" y="197.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0000                    0110          </text>
+<text x="0" y="203.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0111                    1111          </text>
+<text x="0" y="210.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1010                1100              </text>
+<text x="0" y="216.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0001                0011              </text>
+<text x="0" y="223.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0011                0111              </text>
+<text x="0" y="229.5" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1001                1000              </text>
+<text x="0" y="236.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          0010                0111              </text>
+<text x="0" y="242.5" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">                          1000                1010              </text>
+<text x="0" y="249.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11000000100111010100            1100                  </text>
+<text x="0" y="255.4" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01011011000000101100            0100                  </text>
+<text x="0" y="261.9" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11100100001001100001            0101                  </text>
+<text x="0" y="268.4" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01000010000111100011            1110                  </text>
+<text x="0" y="274.9" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00101000010010011101            0111                  </text>
+<text x="0" y="281.4" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01101000110111000110            0100                  </text>
+<text x="0" y="287.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0010                        0100                      </text>
+<text x="0" y="294.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0111                        1100                      </text>
+<text x="0" y="300.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0111                        1110                      </text>
+<text x="0" y="307.3" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0010                        1101                      </text>
+<text x="0" y="313.8" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1000                        1100                      </text>
+<text x="0" y="320.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1101                        1101                      </text>
+<text x="0" y="326.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1100                        1011                      </text>
+<text x="0" y="333.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0110                        0011                      </text>
+<text x="0" y="339.7" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0101                        1011                      </text>
+<text x="0" y="346.2" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1001                        0111                      </text>
+<text x="0" y="352.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          1011                        0101                      </text>
+<text x="0" y="359.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          0111                        1100                      </text>
+<text x="0" y="365.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          11011101001101010001        1011                      </text>
+<text x="0" y="372.1" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          10101000000111101011        0011                      </text>
+<text x="0" y="378.6" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00111010000001001001        0001                      </text>
+<text x="0" y="385.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          00101000111000010001        1111                      </text>
+<text x="0" y="391.5" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01101010011010011001        1010                      </text>
+<text x="0" y="398.0" font-size="9.20" fill="#426800" textLength="341.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">          01001011110101100100        0111                      </text>
+</g>
+</g>
+<clipPath id="portrait-clip"><rect width="342" height="530"/></clipPath>
+<g clip-path="url(#portrait-clip)"><rect class="scan" width="342" height="24" fill="#76b900" opacity=".055"/></g>
+</g>
+</g>
+<text x="240" y="466" fill="#666666" font-size="14" font-weight="400" class="" text-anchor="middle">27 / 0x1b / 00011011</text>
+<path d="M24 485h432" stroke="#cddbb7" stroke-dasharray="2 5"/>
+<text x="24" y="518" fill="#426800" font-size="16" font-weight="400" class="" >Role:</text>
+<text x="24" y="542" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Cybersecurity engineering student</text>
+<text x="24" y="573" fill="#426800" font-size="16" font-weight="400" class="" >Focus:</text>
+<text x="24" y="597" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Reverse engineering &amp; binary analysis</text>
+<text x="24" y="635" fill="#426800" font-size="16" font-weight="400" class="" >Languages.Code:</text>
+<text x="24" y="659" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Python / C / Bash / PowerShell</text>
+<text x="24" y="690" fill="#426800" font-size="16" font-weight="400" class="" >Tools.Reverse:</text>
+<text x="24" y="714" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >GDB / radare2 / Ghidra</text>
+<text x="24" y="745" fill="#426800" font-size="16" font-weight="400" class="" >Tools.Security:</text>
+<text x="24" y="769" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Burp / Nmap / CodeQL / Semgrep</text>
+<path d="M24 793h432" stroke="#cddbb7" stroke-dasharray="2 5"/>
+<text x="24" y="823" fill="#426800" font-size="16" font-weight="400" class="" >Hobbies.Reversing:</text>
+<text x="24" y="847" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Untangling XOR &amp; PRNG checks</text>
+<text x="24" y="878" fill="#426800" font-size="16" font-weight="400" class="" >Hobbies.Pwn:</text>
+<text x="24" y="902" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Heap UAFs &amp; GOT overwrites</text>
+<text x="24" y="933" fill="#426800" font-size="16" font-weight="400" class="" >Hobbies.Web:</text>
+<text x="24" y="957" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >JWT algorithm confusion</text>
+<text x="24" y="988" fill="#426800" font-size="16" font-weight="400" class="" >Hobbies.AI:</text>
+<text x="24" y="1012" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Local LLMs for binary analysis</text>
+<path d="M24 1023h432" stroke="#cddbb7" stroke-dasharray="2 5"/>
+<text x="24" y="1054" fill="#426800" font-size="16" font-weight="400" class="" >HTB / Root-Me:</text>
+<text x="24" y="1078" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >Advanced CTF practice</text>
+<text x="24" y="1112" fill="#426800" font-size="16" font-weight="400" class="" >GitHub.Public:</text>
+<text x="24" y="1136" fill="#1e1e1e" font-size="16.5" font-weight="400" class="" >21 public repos / 30 stars</text>
+<text x="24" y="1165" fill="#426800" font-size="18" font-weight="700" class="" >Every crash is a clue.</text>
+<text x="24" y="1200" fill="#666666" font-size="11" font-weight="400" class="" >GitHub checked 2026-10-31 UTC</text>
+</svg>

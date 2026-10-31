@@ -1,0 +1,49 @@
+name: Refresh binary profile
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'profile.json'
+      - 'scripts/**'
+      - 'assets/source/**'
+      - '.github/workflows/profile.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: binary-profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Fetch public GitHub counts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/update_public_stats.py
+      - name: Build animated SVGs
+        run: python scripts/render_profile.py
+      - name: Check generated SVGs
+        run: python scripts/check_profile.py
+      - name: Commit changed assets
+        run: |
+          git add assets/profile-*.svg data/public-github.json
+          if git diff --cached --quiet; then
+            echo "Profile is already current."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh public profile assets'
+          git push
