@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FACE = json.loads((ROOT / 'assets/source/face-luminance.json').read_text(encoding='utf-8'))
 NUMBER = json.loads((ROOT / 'assets/source/number-relief.json').read_text(encoding='utf-8'))
 DURATION = 16
-COUNT = len(NUMBER['points'])
+COUNT = sum(lum >= 10 or bool(glass) for lum,glass in zip(FACE['luminance'],FACE['glasses']))
 
 FLOW_CSS = """
 text{font-family:'Roboto Mono','Liberation Mono','Courier New',monospace;white-space:pre}
@@ -22,24 +22,20 @@ def blend(a, b, t):
 
 
 def face_points():
-    """Retain frame contours, then sample the face evenly."""
+    """Preserve every visible cell in the detailed portrait grid."""
     w, h = FACE['width'], FACE['height']
-    rng = random.Random(27031)
-    candidates, frames = [], []
+    points = []
     for y in range(h):
         for x in range(w):
             lum = FACE['luminance'][y*w+x]
-            glass = bool(FACE['glasses'][y*w+x])
-            if lum < 20 and not glass:
+            glass = FACE['glasses'][y*w+x]
+            if lum < 10 and not glass:
                 continue
-            px = 22 + (x+.5+rng.uniform(-.03,.03)) * 298/w
-            py = 12 + (y+.5+rng.uniform(-.03,.03)) * 492/h
+            px = x*341.6/w
+            py = 9.2+y*518.4/h
             shade = max(0, min(1, lum/235))
-            (frames if glass else candidates).append((px,py,shade,glass))
-    candidates.sort(key=lambda p: p[1]+p[0]*.12)
-    n = COUNT-len(frames)
-    selected = [candidates[min(len(candidates)-1,int((i+.5)*len(candidates)/n))] for i in range(n)]
-    return sorted(frames+selected,key=lambda p:p[1]+p[0]*.12)
+            points.append((px,py,shade,glass))
+    return sorted(points,key=lambda p:p[1]+p[0]*.12)
 
 
 def number_points():
@@ -50,8 +46,11 @@ def number_points():
 
 
 def face_color(c, shade, glasses=False):
-    if glasses:
+    if glasses == 2:
         return c['brand'] if c['bg']=='#000000' else c['accent']
+    if glasses == 1:
+        green = c['brand'] if c['bg']=='#000000' else c['accent']
+        return blend(c['bg'],green,.12+.88*shade**.75)
     strength = .12 + .88*shade
     return blend(c['bg'], c['portrait'], strength)
 
@@ -78,6 +77,6 @@ def binary_art(c):
         size = 9.0 + rng.random()*.3
         bit = rng.randrange(2)
         color = face_color(c, fs, glasses)
-        out.append(f'<text x="{fx:.1f}" y="{fy:.1f}" fill="{color}" font-size="{size:.1f}">{bit}</text>')
+        out.append(f'<text x="{fx:.1f}" y="{fy:.1f}" fill="{color}" font-size="{size:.1f}" font-weight="600">{bit}</text>')
     out.append('</g>')
     return '\n'.join(out)

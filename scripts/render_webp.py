@@ -1,6 +1,6 @@
 """Bake the flow into 30 fps WebP images: no per-particle work in the browser.
 
-Static layout remains SVG. Only the build process computes the 2,028 trajectories.
+Static layout remains SVG. Only the build process computes particle trajectories.
 Glyph masks and curve lengths are cached; held poses are stored as long frames.
 """
 
@@ -115,7 +115,7 @@ def progress(t):
 
 @lru_cache(maxsize=16)
 def glyph(bit, size):
-    f = font(size)
+    f = font(size,600)
     mask = Image.new('L', (30, 36))
     ImageDraw.Draw(mask).text((3, 26), str(bit), font=f, fill=255, anchor='ls')
     box = mask.getbbox()
@@ -139,13 +139,13 @@ def trajectories(c):
         size = round((9+rng.random()*.3)*SCALE)
         bit = rng.randrange(2)
         result.append((curve, lengths, fy/518*.68, rgb(face_color(c,fs,glasses)),
-                       rgb(relief_color(c,ns)), glyph(bit,size)))
+                       rgb(relief_color(c,ns)), (bit,size)))
     return result
 
 
 def portrait_frame(c, particles, t):
     image = Image.new('RGB', (342*SCALE,530*SCALE), c['bg'])
-    for curve, lengths, phase, fc, nc, (mask, offset) in particles:
+    for curve, lengths, phase, fc, nc, (bit,size) in particles:
         p = progress(t+phase)
         if p <= 0:
             x, y = curve[0]
@@ -159,6 +159,7 @@ def portrait_frame(c, particles, t):
             ratio = (distance-lengths[i-1])/max(1e-9,lengths[i]-lengths[i-1])
             x, y = cubic(curve, (i-1+ratio)/48)
             color = tuple(round(a+(b-a)*p) for a,b in zip(fc,nc))
+        mask,offset = glyph(bit,round(size*(1-.15*p)))
         image.paste(color, (round(x*SCALE+offset[0]),round(y*SCALE+offset[1])), mask)
     resized = image.resize((342,530), Image.Resampling.LANCZOS)
     image.close()
@@ -232,9 +233,12 @@ def build_animations(themes):
             sequence = FrameSequence(base,portraits,placement)
             path = ROOT/'assets'/f'{name}.webp'
             temporary = path.with_name(path.stem+'.tmp.webp')
-            first.save(temporary,save_all=True,append_images=[sequence],duration=durations,
-                           loop=0,lossless=False,quality=82,method=1,minimize_size=False,
+            for quality in (80,79,78):
+                first.save(temporary,save_all=True,append_images=[sequence],duration=durations,
+                           loop=0,lossless=False,quality=quality,method=4,minimize_size=False,
                            allow_mixed=False,kmin=30,kmax=60)
+                if temporary.stat().st_size < 8*1024*1024:
+                    break
             assert temporary.stat().st_size < 8*1024*1024, 'Profile image exceeded its download budget'
             temporary.replace(path)
             print(f'Rendered assets/{name}.webp ({path.stat().st_size:,} bytes, {len(portraits)} frames)',flush=True)

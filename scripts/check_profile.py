@@ -65,6 +65,10 @@ def check():
     face = json.loads((ROOT / 'assets/source/face-luminance.json').read_text(encoding='utf-8'))
     assert len(face['glasses']) == face['width']*face['height']
     assert sum(face['glasses']) > 50, 'Glasses need their own color mask'
+    assert sum(v==1 for v in face['glasses']) > 100, 'Lenses must be green, not just frames'
+    assert sum(v==2 for v in face['glasses']) > 50
+    from binary_flow import face_points,COUNT
+    assert COUNT >= 3000 and len(face_points())==COUNT, 'Preserve full portrait detail'
     assert set(face)=={'width','height','luminance','glasses'}
     relief = json.loads((ROOT / 'assets/source/number-relief.json').read_text(encoding='utf-8'))
     assert {point['surface'] for point in relief['points']} == {'front', 'side'}
