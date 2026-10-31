@@ -1,6 +1,6 @@
 """Binary particles follow shared curved currents from a coarse face to a shaded 27.
 
-Geometry and fill use SVG animation; the particles stay visible throughout the morph.
+Geometry and fill are computed at build time and encoded into WebP frames.
 The reduced-motion alternative is a separate static, deliberately abstract portrait.
 """
 
@@ -18,15 +18,7 @@ TIMES = '0;.24;.48;.72;.96;1'
 SPLINES = '0 0 1 1;.42 0 .18 1;0 0 1 1;.42 0 .18 1;0 0 1 1'
 
 FLOW_CSS = """
-text{font-family:Consolas,'Liberation Mono','Courier New',monospace;white-space:pre}
-.static-portrait{display:none}
-.cursor{animation:blink 1.4s steps(1,end) infinite}
-@keyframes blink{0%,68%{opacity:1}69%,100%{opacity:0}}
-@media(prefers-reduced-motion:reduce){
- .fluid-particles{display:none}
- .static-portrait{display:inline}
- .cursor{animation:none;opacity:1}
-}
+text{font-family:'Roboto Mono','Liberation Mono','Courier New',monospace;white-space:pre}
 """
 
 
@@ -84,35 +76,13 @@ def relief_color(c, shade):
 
 
 def binary_art(c):
-    faces, numbers = face_points(), number_points()
-    out = ['<g id="binary-portrait" aria-hidden="true">', '<g class="fluid-particles">']
-    static = []
+    """Static SVG fallback; the expensive motion is baked into WebP at build time."""
+    out = ['<g id="binary-portrait" aria-hidden="true">']
     rng = random.Random(270)
-    for i, (f, n) in enumerate(zip(faces, numbers)):
-        fx, fy, fs = f
-        nx, ny, ns = n
-        # A common S-shaped current links the two forms, with per-row phase drift.
-        guide_x = 172 + math.sin(fy/86)*67
-        a_x = fx*.48 + guide_x*.52
-        a_y = min(512, fy+128)
-        b_x = nx*.43 + (172 + math.sin(ny/92+1.7)*79)*.57
-        b_y = max(15, ny-134)
-        path = (f'M{fx:.1f} {fy:.1f} C{a_x:.1f} {a_y:.1f} {b_x:.1f} {b_y:.1f} {nx:.1f} {ny:.1f} '
-                f'C{b_x:.1f} {b_y:.1f} {a_x:.1f} {a_y:.1f} {fx:.1f} {fy:.1f}')
-        phase = -(fy/518)*.68
-        fc, nc = face_color(c, fs), relief_color(c, ns)
+    for fx, fy, fs in face_points():
         size = 9.0 + rng.random()*.3
         bit = rng.randrange(2)
-        out.append(f'<g class="fluid-bit" fill="{fc}" font-size="{size:.1f}">')
-        out.append(f'<animateMotion dur="{DURATION}s" begin="{phase:.3f}s" repeatCount="indefinite" '
-                   f'path="{path}" keyPoints="0;0;.5;.5;1;1" keyTimes="{TIMES}" '
-                   f'calcMode="spline" keySplines="{SPLINES}" rotate="0"/>')
-        out.append(f'<animate attributeName="fill" dur="{DURATION}s" begin="{phase:.3f}s" '
-                   f'repeatCount="indefinite" values="{fc};{fc};{nc};{nc};{fc};{fc}" '
-                   f'keyTimes="{TIMES}" calcMode="spline" keySplines="{SPLINES}"/>')
-        out.append(f'<text x="0" y="0">{bit}</text></g>')
-        static.append(f'<text x="{fx:.1f}" y="{fy:.1f}" fill="{fc}" font-size="{size:.1f}">{bit}</text>')
-    out.append('</g><g class="static-portrait">')
-    out.extend(static)
-    out.append('</g></g>')
+        color = face_color(c, fs)
+        out.append(f'<text x="{fx:.1f}" y="{fy:.1f}" fill="{color}" font-size="{size:.1f}">{bit}</text>')
+    out.append('</g>')
     return '\n'.join(out)

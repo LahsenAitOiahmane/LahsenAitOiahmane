@@ -10,6 +10,7 @@ on:
       - 'profile.json'
       - 'scripts/**'
       - 'assets/source/**'
+      - 'assets/fonts/**'
       - '.github/workflows/profile.yml'
 
 permissions:
@@ -22,23 +23,27 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - name: Install image encoder
+        run: python -m pip install -r scripts/requirements.txt
       - name: Fetch public GitHub counts
         env:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/update_public_stats.py
-      - name: Build animated SVGs
+      - name: Build pre-rendered animations and static fallbacks
         run: python scripts/render_profile.py
-      - name: Check generated SVGs
+      - name: Check profile images
         run: python scripts/check_profile.py
       - name: Commit changed assets
         run: |
-          git add assets/profile-*.svg data/public-github.json
+          git add assets/profile-*.svg assets/profile-*.webp data/public-github.json
           if git diff --cached --quiet; then
             echo "Profile is already current."
             exit 0

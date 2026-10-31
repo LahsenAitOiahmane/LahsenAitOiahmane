@@ -1,10 +1,11 @@
-"""Build self-contained binary animation SVGs, using the standard library only.
+"""Build static SVG fallbacks and pre-rendered binary animation WebPs.
 
 The user's supplied portrait is sampled into a luminance grid after a close-up edit.
 No raster portrait, JavaScript, remote fonts, or trackers are embedded in the SVGs.
 """
 
 import json
+import argparse
 from html import escape
 from binary_flow import binary_art, FLOW_CSS
 from pathlib import Path
@@ -41,8 +42,8 @@ def render(theme, mobile=False):
 
     def row(y, key, value):
         text(393, y, key + ':', "key")
-        end = 393 + (len(key) + 1) * 8.3 + 12
-        leader_end = max(end, 1097 - len(value) * 8.25 - 12)
+        end = 393 + (len(key) + 1) * 9.05 + 12
+        leader_end = max(end, 1097 - len(value) * 9.05 - 12)
         s.append(f'<path d="M{end:.1f} {y-4}H{leader_end:.1f}" stroke="{c["rule"]}" stroke-dasharray="2 5"/>')
         text(1097, y, value, "value", text_anchor="end")
 
@@ -77,7 +78,7 @@ def render(theme, mobile=False):
         s.append(binary_art(c))
         s.append('</g>')
         text(393, 42, 'l27sen@localhost:~$ ./whoami', 'accent', 17, 700)
-        text(393 + len('l27sen@localhost:~$ ./whoami') * 9.35 + 5, 42, '_', 'accent', 17, 700, klass='cursor')
+        text(393 + len('l27sen@localhost:~$ ./whoami') * 10.25 + 5, 42, '_', 'accent', 17, 700, klass='cursor')
         rule(393, 61, 704)
         row(91, 'Role', P['role'])
         row(113, 'Focus', P['focus'])
@@ -102,8 +103,17 @@ def render(theme, mobile=False):
 
 
 if __name__ == '__main__':
-    for theme in THEMES:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--static-only', action='store_true')
+    parser.add_argument('--theme', choices=list(THEMES))
+    args = parser.parse_args()
+    selected = {args.theme: THEMES[args.theme]} if args.theme else THEMES
+    for theme in selected:
         for mobile in (False, True):
             name = f'profile-{theme}{"-mobile" if mobile else ""}.svg'
             (ROOT / 'assets' / name).write_text(render(theme, mobile), encoding='utf-8')
             print('Rendered assets/' + name)
+
+    if not args.static_only:
+        from render_webp import build_animations
+        build_animations(selected)

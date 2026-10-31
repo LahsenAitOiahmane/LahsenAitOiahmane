@@ -1,17 +1,23 @@
 # Binary profile
 
-Edit `profile.json`, then run `python scripts/render_profile.py`. The renderer uses only the Python standard library. It produces light/dark desktop/mobile SVGs. The same 2,028 binary particles travel along curved currents from a deliberately abstract portrait into a shaded 27, then return, in a 16-second loop. This is continuous SVG motion, not an opacity crossfade. The 27 has beveled highlights and a shallow side shadow to suggest depth in flat artwork. Reduced-motion mode shows a separate static abstract portrait. SVGs contain no scripts, embedded raster art, external fonts, or tracking services.
+Install `scripts/requirements.txt`, edit `profile.json`, then run `python scripts/render_profile.py`. The builder uses Pillow to pre-render light/dark desktop/mobile WebP animations, plus static SVG fallbacks for reduced motion. The same 2,028 binary particles travel along curved currents from a deliberately abstract portrait into a shaded 27, then return, in a 16-second loop. Motion is baked at 30 fps, so visitors' browsers decode one image instead of evaluating thousands of movement and color animations. Held poses use long frame durations to reduce file size. The 27 retains its beveled highlights and shallow side shadow. SVG fallbacks are fully static and contain no scripts, animations, embedded raster art, external fonts, or trackers.
+
+The original live SVG had 4,056 animation elements and caused substantial local rendering stalls. It was replaced after the user reported page lag. The earlier chat GIF was also only 6 fps and is not representative of the delivered 30 fps files. See [the performance report](PERFORMANCE.md) for before/after measurements. Each delivered image is checked against an 8 MiB size budget.
+
+Typography is rendered with bundled Roboto Mono, under the included [SIL Open Font License](../assets/fonts/OFL.txt). No font download is needed when visiting the profile.
 
 The palette follows the user's NVIDIA-inspired direction, subsequently brightened at their request: black, white, neutral grays, and a lighter lime `#B4FF57`. Light-theme text uses `#548000` for contrast on white, with brighter lime on the relief. Facial contrast is tuned separately in each theme to keep the silhouette readable without restoring photographic detail.
 
 ## GitHub workflow
 
-`.github/workflows/profile.yml` runs on relevant pushes to main, manually from Actions, and at minute 17 every six hours (UTC). It fetches public GitHub repository/star counts, renders the artwork, validates it, and commits generated changes. It uses GitHub's built-in token; no personal access token or extra secret is required. API failures fail the job without overwriting the last successful cache. Scheduled runs require the workflow on the default branch and Actions enabled; repository rules must permit the bot to push generated commits. The workflow has been prepared locally; it has not run on GitHub yet.
+`.github/workflows/profile.yml` runs on relevant pushes to main, manually from Actions, and at minute 17 every six hours (UTC). It installs the pinned Pillow encoder, fetches public GitHub repository/star counts, renders the artwork, validates it, and commits generated WebP/SVG changes. It uses GitHub's built-in token; no personal access token or extra secret is required. API failures fail the job without overwriting the last successful cache. Scheduled runs require the workflow on the default branch and Actions enabled; repository rules must permit the bot to push generated commits. The workflow has been prepared locally; it has not run on GitHub yet.
 
 The counters are public repository count and the sum of stars across all owned public repositories, including forks. There is no private repository enumeration, location, employer, email address, age, or birthdate. The cache retains only the two counts and UTC check date. HTB and Root-Me are direct profile links; their changing scores/ranks are intentionally not copied into the artwork.
 
 Public refresh: `python scripts/update_public_stats.py`  
+Install encoder: `python -m pip install -r scripts/requirements.txt`  
 Build: `python scripts/render_profile.py`  
+Static previews only: `python scripts/render_profile.py --static-only`  
 Validate: `python scripts/check_profile.py`
 
 ## Content evidence

@@ -1,9 +1,13 @@
 <!-- Generated artwork: python scripts/render_profile.py -->
 <picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-dark-mobile.svg">
-  <source media="(max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
-  <img src="./assets/profile-light.svg" width="1120" alt="l27sen, aka Lahsen, wearing glasses. An abstract binary portrait flows into a shaded 27, with medium facial detail. Cybersecurity engineering student focused on reverse engineering and binary analysis. Hobbies: XOR and PRNG checks, heap UAFs and GOT overwrites, JWT algorithm confusion, and local LLMs for binary analysis. Advanced CTF practice on Hack The Box and Root-Me. Every crash is a clue.">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-dark-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-light.svg">
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-dark-mobile.webp">
+  <source media="(max-width: 600px)" srcset="./assets/profile-light-mobile.webp">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.webp">
+  <img src="./assets/profile-light.webp" width="1120" alt="l27sen, aka Lahsen, wearing glasses. An abstract binary portrait flows into a shaded 27, with medium facial detail. Cybersecurity engineering student focused on reverse engineering and binary analysis. Hobbies: XOR and PRNG checks, heap UAFs and GOT overwrites, JWT algorithm confusion, and local LLMs for binary analysis. Advanced CTF practice on Hack The Box and Root-Me. Every crash is a clue.">
 </picture>
 
 <p align="center">
