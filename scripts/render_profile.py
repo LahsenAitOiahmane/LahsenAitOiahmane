@@ -1,11 +1,8 @@
-"""Build static SVG fallbacks and pre-rendered binary animation WebPs.
-
-The user's supplied portrait is sampled into a luminance grid after a close-up edit.
-No raster portrait, JavaScript, remote fonts, or trackers are embedded in the SVGs.
-"""
+"""Build profile images and static fallbacks."""
 
 import json
 import argparse
+import textwrap
 from html import escape
 from binary_flow import binary_art, FLOW_CSS
 from pathlib import Path
@@ -16,9 +13,9 @@ STATS_PATH = ROOT / "data/public-github.json"
 STATS = json.loads(STATS_PATH.read_text(encoding="utf-8")) if STATS_PATH.exists() else None
 THEMES = {
     "dark": dict(bg="#000000", fg="#ffffff", key="#b4ff57", value="#eeeeee",
-                 muted="#969696", rule="#25370d", portrait="#e7f3d5", accent="#b4ff57", brand="#b4ff57"),
+                 muted="#969696", rule="#25370d", portrait="#ffffff", accent="#b4ff57", brand="#b4ff57"),
     "light": dict(bg="#ffffff", fg="#1e1e1e", key="#548000", value="#1e1e1e",
-                  muted="#666666", rule="#cddbb7", portrait="#1e1e1e", accent="#548000", brand="#b4ff57"),
+                  muted="#666666", rule="#cddbb7", portrait="#111111", accent="#548000", brand="#b4ff57"),
 }
 
 CSS = FLOW_CSS
@@ -26,10 +23,10 @@ CSS = FLOW_CSS
 
 def render(theme, mobile=False):
     c = THEMES[theme]
-    w, h = (480, 1225) if mobile else (1120, 620)
+    w, h = (480, 1540) if mobile else (1120, 650)
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
          '<title id="title">l27sen / binary alter ego</title>',
-         '<desc id="desc">Lahsen wearing glasses, abstracted into binary particles that flow into a shaded 27. Cybersecurity engineering student focused on reverse engineering and binary analysis. Hobbies include XOR and PRNG checks, heap use-after-free and GOT overwrites, JWT algorithm confusion, and local LLMs. Advanced CTF practice on Hack The Box and Root-Me.</desc>',
+         '<desc id="desc">Lahsen in binary with green glasses, flowing into 27. Cybersecurity engineering student focused on reverse engineering, binary analysis, and pentesting. Preparing for HTB CPTS and getting started in bug bounty. Interests include XOR and PRNG checks, heap exploitation, JWT confusion, insecure deserialization, and AI-assisted binary analysis.</desc>',
          '<style>' + CSS + '</style>',
          f'<rect x=".5" y=".5" width="{w-1}" height="{h-1}" rx="12" fill="{c["bg"]}" stroke="{c["rule"]}"/>']
 
@@ -49,55 +46,62 @@ def render(theme, mobile=False):
 
     def mobile_row(y, key, value):
         text(24, y, key + ':', "key", 16)
-        text(24, y+24, value, "value", 16.5)
+        rows = textwrap.wrap(value,width=43)
+        for i,row in enumerate(rows):
+            text(24,y+24+i*24,row,"value",16.5)
+        return y+34+len(rows)*24
 
     github = f'{STATS["public_repos"]} public repos / {STATS["stars"]} stars' if STATS else 'Public work on GitHub'
     checked = STATS['checked_utc'] + ' UTC' if STATS else 'Refresh via GitHub Actions'
+    prompt = P['handle']+'@localhost:~$ ./whoami'
     if mobile:
-        text(24, 28, 'l27sen@localhost:~$', "accent", 15, 700)
-        s.append('<g transform="translate(110 46) scale(.76)">')
+        text(24, 44, P['handle']+'@localhost:~$', "accent", 16, 700)
+        s.append('<g transform="translate(110 78) scale(0.76)">')
         s.append(binary_art(c))
         s.append('</g>')
-        text(240, 466, '27 / 0x1b / 00011011', 'muted', 14, text_anchor="middle")
-        rule(24, 485, 432)
-        mobile_row(518, 'Role', P['role'])
-        mobile_row(573, 'Focus', P['focus'])
-        mobile_row(635, 'Languages.Code', P['languages'])
-        mobile_row(690, 'Tools.Reverse', P['reverse_tools'])
-        mobile_row(745, 'Tools.Security', P['security_tools'])
-        rule(24, 793, 432)
-        for i, hobby in enumerate(P['hobbies']):
-            mobile_row(823 + i * 55, hobby['key'], hobby['value'])
-        rule(24, 1023, 432)
-        mobile_row(1054, 'HTB / Root-Me', P['platforms']['level'])
-        mobile_row(1112, 'GitHub.Public', github)
-        text(24, 1165, P['signature'], 'accent', 18, 700)
-        text(24, 1200, 'GitHub checked ' + checked, 'muted', 11)
+        text(240, 507, '27 / 0x1b / 00011011', 'muted', 14, text_anchor="middle")
+        rule(24, 526, 432)
+        y=558
+        for key,value in [('Role',P['role']),('Focus',P['focus']),('Training',P['training']),('Next',P['next'])]:
+            y=mobile_row(y,key,value)
+        y+=14
+        for key,value in [('Languages.Code',P['languages']),('Tools.Reverse',P['reverse_tools']),('Tools.Security',P['security_tools'])]:
+            y=mobile_row(y,key,value)
+        rule(24,y+4,432)
+        y+=32
+        for hobby in P['hobbies']:
+            y=mobile_row(y,hobby['key'],hobby['value'])
+        rule(24,y+4,432)
+        y=mobile_row(y+32,'HTB / Root-Me',P['platforms']['level'])
+        y=mobile_row(y,'GitHub.Public',github)
+        text(24,y+20,P['signature'],'accent',18,700)
+        text(24,y+55,'GitHub checked '+checked,'muted',11)
     else:
         s.append('<g transform="translate(23 34)">')
         s.append(binary_art(c))
         s.append('</g>')
-        text(393, 42, 'l27sen@localhost:~$ ./whoami', 'accent', 17, 700)
-        text(393 + len('l27sen@localhost:~$ ./whoami') * 10.25 + 5, 42, '_', 'accent', 17, 700, klass='cursor')
+        text(393, 42, prompt, 'accent', 17, 700)
+        text(393 + len(prompt) * 10.25 + 5, 42, '_', 'accent', 17, 700, klass='cursor')
         rule(393, 61, 704)
         row(91, 'Role', P['role'])
         row(113, 'Focus', P['focus'])
-        row(135, 'Method', P['approach'])
-        row(177, 'Languages.Code', P['languages'])
-        row(199, 'Languages.LowLevel', P['lowlevel'])
-        row(221, 'Tools.Reverse', P['reverse_tools'])
-        row(243, 'Tools.Security', P['security_tools'])
+        row(135, 'Training', P['training'])
+        row(157, 'Next', P['next'])
+        row(199, 'Languages.Code', P['languages'])
+        row(221, 'Languages.LowLevel', P['lowlevel'])
+        row(243, 'Tools.Reverse', P['reverse_tools'])
+        row(265, 'Tools.Security', P['security_tools'])
         for i, hobby in enumerate(P['hobbies']):
-            row(285 + i*22, hobby['key'], hobby['value'])
-        row(393, 'Platforms', 'Hack The Box / Root-Me')
-        row(415, 'Practice', P['platforms']['level'])
-        row(437, 'Notes', '0xWriteups / solvers & rabbit holes')
-        rule(393, 461, 704)
-        row(488, 'GitHub.Public', github)
-        row(510, 'GitHub.Checked', checked)
-        text(393, 561, P['signature'], 'accent', 19, 700)
-        text(24, 598, 'l27sen :: binary alter ego', 'muted', 12)
-        text(1097, 598, '27 / 0x1b / 00011011', 'muted', 12, text_anchor='end')
+            row(307 + i*22, hobby['key'], hobby['value'])
+        row(415, 'Platforms', 'Hack The Box / Root-Me')
+        row(437, 'Practice', P['platforms']['level'])
+        row(459, 'Notes', '0xWriteups / solvers & rabbit holes')
+        rule(393, 483, 704)
+        row(510, 'GitHub.Public', github)
+        row(532, 'GitHub.Checked', checked)
+        text(393, 583, P['signature'], 'accent', 19, 700)
+        text(24, 620, P['handle']+' :: binary alter ego', 'muted', 12)
+        text(1097, 620, '27 / 0x1b / 00011011', 'muted', 12, text_anchor='end')
     s.append('</svg>')
     return '\n'.join(s) + '\n'
 

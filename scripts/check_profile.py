@@ -1,15 +1,24 @@
-"""Validate published artwork and its references, including privacy constraints."""
+"""Validate profile images, layout, frame timing, and links."""
 
 import json
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from PIL import Image
+from render_webp import parse_placement
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def check():
+    assert parse_placement('translate(110 78) scale(.76)') == [110,78,.76]
+    assert parse_placement('translate(110 78) scale(0.76)') == [110,78,.76]
+    try:
+        parse_placement('translate(110 78) scale(76)')
+    except ValueError:
+        pass
+    else:
+        raise AssertionError('Oversized portrait scale must be rejected')
     readme = (ROOT / 'README.md').read_text(encoding='utf-8')
     profile = json.loads((ROOT / 'profile.json').read_text(encoding='utf-8'))
     for relative in re.findall(r'(?:src|srcset)="(\./[^"]+)"', readme):
@@ -22,11 +31,17 @@ def check():
         tags = {node.tag.rsplit('}', 1)[-1] for node in tree.iter()}
         assert not tags & {'animateMotion', 'animate', 'animateTransform'}, 'Do not restore expensive live particle animations'
         assert '@keyframes' not in svg, 'Reduced-motion SVG must be fully static'
+        portrait = next(n for n in tree.iter() if n.attrib.get('id')=='binary-portrait')
+        frame_color = '#548000' if name.startswith('light') else '#b4ff57'
+        assert sum(n.attrib.get('fill')==frame_color for n in portrait) > 50
+        if 'mobile' in name:
+            heading = next(n for n in tree if n.tag.rsplit('}',1)[-1]=='text')
+            assert float(heading.attrib['y'])-float(heading.attrib['font-size']) >= 24
         animation = ROOT / 'assets' / f'profile-{name}.webp'
         assert animation.stat().st_size < 8*1024*1024, 'Profile image exceeded its download budget'
         with Image.open(animation) as im:
             assert im.is_animated and im.n_frames >= 200
-            assert im.size == ((480, 1225) if 'mobile' in name else (1120,620))
+            assert im.size == ((480, 1540) if 'mobile' in name else (1120,650))
             duration = 0
             small_frames = 0
             for index in range(im.n_frames):
@@ -44,8 +59,13 @@ def check():
     assert profile['platforms']['rootme'] in readme
     assert 'prefers-reduced-motion: reduce' in readme
     assert 'hardware' not in readme.lower()
+    assert 'docs/PROFILE.md' not in readme
+    assert not (ROOT/'docs/PROFILE.md').exists()
+    assert not (ROOT/'docs/PERFORMANCE.md').exists()
     face = json.loads((ROOT / 'assets/source/face-luminance.json').read_text(encoding='utf-8'))
-    assert face['width'] <= 36 and face['height'] <= 46, 'Do not publish a detailed portrait grid'
+    assert len(face['glasses']) == face['width']*face['height']
+    assert sum(face['glasses']) > 50, 'Glasses need their own color mask'
+    assert set(face)=={'width','height','luminance','glasses'}
     relief = json.loads((ROOT / 'assets/source/number-relief.json').read_text(encoding='utf-8'))
     assert {point['surface'] for point in relief['points']} == {'front', 'side'}
     assert max(point['shade'] for point in relief['points']) - min(point['shade'] for point in relief['points']) > .5

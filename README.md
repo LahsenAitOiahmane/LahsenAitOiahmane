@@ -1,4 +1,3 @@
-<!-- Generated artwork: python scripts/render_profile.py -->
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-dark-mobile.svg">
   <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
@@ -7,7 +6,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-dark-mobile.webp">
   <source media="(max-width: 600px)" srcset="./assets/profile-light-mobile.webp">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.webp">
-  <img src="./assets/profile-light.webp" width="1120" alt="l27sen, aka Lahsen, wearing glasses. An abstract binary portrait flows into a shaded 27, with medium facial detail. Cybersecurity engineering student focused on reverse engineering and binary analysis. Hobbies: XOR and PRNG checks, heap UAFs and GOT overwrites, JWT algorithm confusion, and local LLMs for binary analysis. Advanced CTF practice on Hack The Box and Root-Me. Every crash is a clue.">
+  <img src="./assets/profile-light.webp" width="1120" alt="l27sen, aka Lahsen, in binary with green glasses, flowing into 27. Cybersecurity engineering student focused on reverse engineering, binary analysis, and pentesting. Preparing for HTB CPTS and getting started in bug bounty. Interests include XOR and PRNG checks, heap exploitation, JWT algorithm confusion, insecure deserialization, and AI-assisted binary analysis.">
 </picture>
 
 <p align="center">
@@ -19,24 +18,23 @@
 </p>
 
 <details>
-<summary>Behind the bits / text version</summary>
+<summary>About / text version</summary>
 
-Hey, I'm **Lahsen**, aka **`l27sen`**. Cybersecurity engineering student, reverse-engineering rabbit-hole regular, and advanced CTF practitioner on Hack The Box and Root-Me.
+Hey, I'm **Lahsen**, aka **`l27sen`**. I'm a cybersecurity engineering student focused on reverse engineering, binary analysis, and penetration testing. I'm preparing for **HTB CPTS** and getting started in **bug bounty**.
 
 I like understanding what the binary actually does, writing a solver to prove it, and leaving a useful writeup behind. My idea of a hobby:
 
 - **Reversing:** untangling XOR loops, PRNG checks, and the occasional decoy flag.
 - **Pwn:** exploring heap use-after-free bugs and GOT overwrites in CTFs.
-- **Web:** picking apart JWT algorithm confusion and authentication logic in labs.
+- **Web:** exploring JWT algorithm confusion, insecure deserialization, and authentication logic in labs.
 - **AI:** building local LLM and RAG tools that help explain binary analysis.
 
 **Languages:** Python, C, Bash, PowerShell; reading x86/x64 assembly.<br>
-**Tools:** GDB, radare2, Ghidra, Burp Suite, Nmap, CodeQL, Semgrep.
+**Reverse engineering:** GDB, radare2, Ghidra, IDA.<br>
+**Pentesting:** Burp Suite, Nmap, Metasploit, Sliver.
 
 **[Hack The Box](https://app.hackthebox.com/public/users/2961025)** and **[Root-Me](https://www.root-me.org/larsen-893035)** are where I practice. Follow the links for current progress. My notes live in **[0xWriteups](https://github.com/LahsenAitOiahmane/0xWriteups)**.
 
 *Every crash is a clue.*
 
 </details>
-
-<!-- Maintenance and workflow details: docs/PROFILE.md -->

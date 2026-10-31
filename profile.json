@@ -1,18 +1,18 @@
 {
-  "name": "Lahsen",
   "handle": "l27sen",
   "github": "LahsenAitOiahmane",
   "role": "Cybersecurity engineering student",
-  "focus": "Reverse engineering & binary analysis",
-  "approach": "Learn by reversing. Prove by building.",
+  "focus": "Reverse engineering / Binary analysis / Pentesting",
+  "training": "HTB CPTS / in preparation",
+  "next": "Bug bounty / getting started",
   "languages": "Python / C / Bash / PowerShell",
   "lowlevel": "x86 / x64 assembly",
-  "reverse_tools": "GDB / radare2 / Ghidra",
-  "security_tools": "Burp / Nmap / CodeQL / Semgrep",
+  "reverse_tools": "GDB / radare2 / Ghidra / IDA",
+  "security_tools": "Burp Suite / Nmap / Metasploit / Sliver",
   "hobbies": [
     {"key": "Hobbies.Reversing", "value": "Untangling XOR & PRNG checks"},
     {"key": "Hobbies.Pwn", "value": "Heap UAFs & GOT overwrites"},
-    {"key": "Hobbies.Web", "value": "JWT algorithm confusion"},
+    {"key": "Hobbies.Web", "value": "JWT algorithm confusion / Insecure deserialization"},
     {"key": "Hobbies.AI", "value": "Local LLMs for binary analysis"}
   ],
   "platforms": {
@@ -20,6 +20,5 @@
     "hackthebox": "https://app.hackthebox.com/public/users/2961025",
     "rootme": "https://www.root-me.org/larsen-893035"
   },
-  "notes": "https://github.com/LahsenAitOiahmane/0xWriteups",
   "signature": "Every crash is a clue."
 }

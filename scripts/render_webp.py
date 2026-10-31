@@ -33,18 +33,26 @@ def rgb(value):
     return tuple(int(value[i:i+2], 16) for i in (1, 3, 5))
 
 
+def parse_placement(transform):
+    values = [float(n) for n in re.findall(r'-?(?:\d+(?:\.\d*)?|\.\d+)',transform)]
+    if len(values) not in (2,3) or (len(values)==3 and not 0 < values[2] <= 2):
+        raise ValueError(f'Invalid portrait placement: {transform}')
+    return values
+
+
 def background(svg_path):
     """Rasterize our small layout vocabulary, excluding the portrait placeholder."""
     root = ET.parse(svg_path).getroot()
     w, h = int(root.attrib['width']), int(root.attrib['height'])
-    image = Image.new('RGBA', (w*SCALE, h*SCALE))
+    background_color = next(n.attrib['fill'] for n in root if n.tag.rsplit('}',1)[-1]=='rect')
+    image = Image.new('RGB', (w*SCALE, h*SCALE), background_color)
     draw = ImageDraw.Draw(image)
     placement = None
     for node in root:
         tag = node.tag.rsplit('}', 1)[-1]
         a = node.attrib
         if tag == 'g':
-            placement = [float(n) for n in re.findall(r'-?\d+(?:\.\d+)?', a['transform'])]
+            placement = parse_placement(a['transform'])
         elif tag == 'rect':
             x, y = float(a.get('x', 0))*SCALE, float(a.get('y', 0))*SCALE
             box = (x, y, x+float(a['width'])*SCALE, y+float(a['height'])*SCALE)
@@ -118,7 +126,7 @@ def trajectories(c):
     import random
     rng = random.Random(270)
     result = []
-    for (fx, fy, fs), (nx, ny, ns) in zip(face_points(), number_points()):
+    for (fx, fy, fs, glasses), (nx, ny, ns) in zip(face_points(), number_points()):
         guide = 172+math.sin(fy/86)*67
         a = (fx*.48+guide*.52, min(512, fy+128))
         b = (nx*.43+(172+math.sin(ny/92+1.7)*79)*.57, max(15, ny-134))
@@ -130,7 +138,7 @@ def trajectories(c):
             previous = xy
         size = round((9+rng.random()*.3)*SCALE)
         bit = rng.randrange(2)
-        result.append((curve, lengths, fy/518*.68, rgb(face_color(c,fs)),
+        result.append((curve, lengths, fy/518*.68, rgb(face_color(c,fs,glasses)),
                        rgb(relief_color(c,ns)), glyph(bit,size)))
     return result
 
@@ -152,7 +160,9 @@ def portrait_frame(c, particles, t):
             x, y = cubic(curve, (i-1+ratio)/48)
             color = tuple(round(a+(b-a)*p) for a,b in zip(fc,nc))
         image.paste(color, (round(x*SCALE+offset[0]),round(y*SCALE+offset[1])), mask)
-    return image.resize((342,530), Image.Resampling.LANCZOS)
+    resized = image.resize((342,530), Image.Resampling.LANCZOS)
+    image.close()
+    return resized
 
 
 def portrait_frames(c):
@@ -173,6 +183,44 @@ def portrait_frames(c):
     return frames, durations
 
 
+class FrameSequence(Image.Image):
+    """Expose composed frames lazily instead of retaining hundreds of full cards."""
+
+    def __init__(self, base, portraits, placement):
+        super().__init__()
+        self.base, self.portraits, self.placement = base, portraits, placement
+        self.n_frames = len(portraits)-1
+        self._current = None
+        self.seek(0)
+
+    def seek(self, index):
+        if not 0 <= index < self.n_frames:
+            raise EOFError(index)
+        if self._current is not None:
+            self._current.close()
+        self._current = compose(self.base,self.portraits[index+1],self.placement)
+        self._im = self._current.im
+        self._mode, self._size = self._current.mode,self._current.size
+        self._index = index
+
+    def tell(self):
+        return self._index
+
+
+def compose(base,portrait,placement):
+    x,y = placement[:2]
+    scale = placement[2] if len(placement)>2 else 1
+    assert 0 < scale <= 2, f'Invalid portrait scale: {scale}'
+    frame = base.copy()
+    if scale != 1:
+        scaled = portrait.resize((round(342*scale),round(530*scale)),Image.Resampling.LANCZOS)
+        frame.paste(scaled,(round(x),round(y)))
+        scaled.close()
+    else:
+        frame.paste(portrait,(round(x),round(y)))
+    return frame
+
+
 def build_animations(themes):
     for theme, c in themes.items():
         print(f'Baking {theme} flow at {FPS} fps...', flush=True)
@@ -180,23 +228,20 @@ def build_animations(themes):
         for mobile in (False,True):
             name = f'profile-{theme}{"-mobile" if mobile else ""}'
             base, placement = background(ROOT/'assets'/f'{name}.svg')
-            x,y = placement[:2]
-            scale = placement[2] if len(placement)>2 else 1
-            frames = []
-            for portrait in portraits:
-                frame = base.copy()
-                if scale != 1:
-                    portrait = portrait.resize((round(342*scale),round(530*scale)),Image.Resampling.LANCZOS)
-                frame.paste(portrait,(round(x),round(y)))
-                frames.append(frame)
+            first = compose(base,portraits[0],placement)
+            sequence = FrameSequence(base,portraits,placement)
             path = ROOT/'assets'/f'{name}.webp'
             temporary = path.with_name(path.stem+'.tmp.webp')
-            frames[0].save(temporary,save_all=True,append_images=frames[1:],duration=durations,
-                           loop=0,lossless=False,quality=82,method=3,minimize_size=True,allow_mixed=True)
+            first.save(temporary,save_all=True,append_images=[sequence],duration=durations,
+                           loop=0,lossless=False,quality=82,method=1,minimize_size=False,
+                           allow_mixed=False,kmin=30,kmax=60)
             assert temporary.stat().st_size < 8*1024*1024, 'Profile image exceeded its download budget'
             temporary.replace(path)
-            print(f'Rendered assets/{name}.webp ({path.stat().st_size:,} bytes, {len(frames)} frames)',flush=True)
-            del frames
+            print(f'Rendered assets/{name}.webp ({path.stat().st_size:,} bytes, {len(portraits)} frames)',flush=True)
+            first.close()
+            sequence.close()
+            base.close()
+            del first,sequence,base
             gc.collect()
         for frame in portraits:
             frame.close()
